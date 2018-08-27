@@ -1,0 +1,993 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2739EA2347503373745A69F4 /* libPods-DNFMDBNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA45119A21F602762DBE4205 /* libPods-DNFMDBNote.a */; };
+		7078158320FC701600B3A30A /* DNAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158120FC701600B3A30A /* DNAlert.m */; };
+		7078158620FC7EF300B3A30A /* DNPersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158520FC7EF300B3A30A /* DNPersonController.m */; };
+		7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158820FC83F500B3A30A /* UILabel+Extension.m */; };
+		7095B6FE20F8737F008A1C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6DE20F8737F008A1C3D /* Assets.xcassets */; };
+		7095B6FF20F8737F008A1C3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6DF20F8737F008A1C3D /* ViewController.m */; };
+		7095B70020F8737F008A1C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E020F8737F008A1C3D /* LaunchScreen.storyboard */; };
+		7095B70120F8737F008A1C3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E220F8737F008A1C3D /* Main.storyboard */; };
+		7095B70220F8737F008A1C3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6E420F8737F008A1C3D /* main.m */; };
+		7095B70320F8737F008A1C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E520F8737F008A1C3D /* Info.plist */; };
+		7095B70420F8737F008A1C3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6E920F8737F008A1C3D /* AppDelegate.m */; };
+		7095B71620F873CE008A1C3D /* DNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B71520F873CE008A1C3D /* DNBaseViewController.m */; };
+		7095B71920F873E3008A1C3D /* DNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B71820F873E3008A1C3D /* DNNavigationController.m */; };
+		7095B71C20F873FD008A1C3D /* DNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B71B20F873FD008A1C3D /* DNTabBarController.m */; };
+		7095B71F20F8740B008A1C3D /* DNBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B71E20F8740B008A1C3D /* DNBaseView.m */; };
+		7095B72220F87421008A1C3D /* DNBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B72120F87421008A1C3D /* DNBaseCell.m */; };
+		7095B72520F87438008A1C3D /* DNBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B72420F87438008A1C3D /* DNBaseModel.m */; };
+		7095B73A20F875F4008A1C3D /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B72720F875F4008A1C3D /* NSArray+Extension.m */; };
+		7095B73B20F875F4008A1C3D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B72920F875F4008A1C3D /* NSString+Extension.m */; };
+		7095B73C20F875F4008A1C3D /* UIView+DNFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B72C20F875F4008A1C3D /* UIView+DNFrame.m */; };
+		7095B73D20F875F4008A1C3D /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73020F875F4008A1C3D /* UIImage+Extension.m */; };
+		7095B73E20F875F4008A1C3D /* UIScrollView+DNRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73220F875F4008A1C3D /* UIScrollView+DNRefresh.m */; };
+		7095B73F20F875F4008A1C3D /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73320F875F4008A1C3D /* UIImageView+Extension.m */; };
+		7095B74020F875F4008A1C3D /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73520F875F4008A1C3D /* UIColor+Extension.m */; };
+		7095B74220F875F4008A1C3D /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73820F875F4008A1C3D /* UIButton+Extension.m */; };
+		7095B74820F87972008A1C3D /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B74720F87972008A1C3D /* HomeController.m */; };
+		7095B74B20F87993008A1C3D /* DNDBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B74A20F87993008A1C3D /* DNDBTools.m */; };
+		7095B74E20F87D84008A1C3D /* DNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B74D20F87D84008A1C3D /* DNNoteModel.m */; };
+		7095B75120F885BE008A1C3D /* DNNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75020F885BE008A1C3D /* DNNoteCell.m */; };
+		7095B75420F88C7B008A1C3D /* DNEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75320F88C7B008A1C3D /* DNEditorController.m */; };
+		7095B75720F88C86008A1C3D /* DNDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75620F88C86008A1C3D /* DNDetailController.m */; };
+		7095B75920F89795008A1C3D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7095B75820F89795008A1C3D /* libsqlite3.tbd */; };
+		70F146E020F842FD00C18212 /* DNFMDBNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F146DF20F842FD00C18212 /* DNFMDBNoteTests.m */; };
+		70F146EB20F842FD00C18212 /* DNFMDBNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F146EA20F842FD00C18212 /* DNFMDBNoteUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70F146DC20F842FD00C18212 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70F146BB20F842FB00C18212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70F146C220F842FB00C18212;
+			remoteInfo = DNFMDBNote;
+		};
+		70F146E720F842FD00C18212 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70F146BB20F842FB00C18212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70F146C220F842FB00C18212;
+			remoteInfo = DNFMDBNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7078158120FC701600B3A30A /* DNAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlert.m; sourceTree = "<group>"; };
+		7078158220FC701600B3A30A /* DNAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlert.h; sourceTree = "<group>"; };
+		7078158420FC7EF300B3A30A /* DNPersonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPersonController.h; sourceTree = "<group>"; };
+		7078158520FC7EF300B3A30A /* DNPersonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPersonController.m; sourceTree = "<group>"; };
+		7078158720FC83F500B3A30A /* UILabel+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		7078158820FC83F500B3A30A /* UILabel+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		7078158C20FC9F4F00B3A30A /* DNInstanceHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNInstanceHead.h; sourceTree = "<group>"; };
+		7095B6DE20F8737F008A1C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7095B6DF20F8737F008A1C3D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7095B6E120F8737F008A1C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7095B6E320F8737F008A1C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7095B6E420F8737F008A1C3D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7095B6E520F8737F008A1C3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7095B6E620F8737F008A1C3D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7095B6E820F8737F008A1C3D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7095B6E920F8737F008A1C3D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7095B71420F873CE008A1C3D /* DNBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNBaseViewController.h; sourceTree = "<group>"; };
+		7095B71520F873CE008A1C3D /* DNBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNBaseViewController.m; sourceTree = "<group>"; };
+		7095B71720F873E3008A1C3D /* DNNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNNavigationController.h; sourceTree = "<group>"; };
+		7095B71820F873E3008A1C3D /* DNNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNNavigationController.m; sourceTree = "<group>"; };
+		7095B71A20F873FD008A1C3D /* DNTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNTabBarController.h; sourceTree = "<group>"; };
+		7095B71B20F873FD008A1C3D /* DNTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNTabBarController.m; sourceTree = "<group>"; };
+		7095B71D20F8740B008A1C3D /* DNBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNBaseView.h; sourceTree = "<group>"; };
+		7095B71E20F8740B008A1C3D /* DNBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNBaseView.m; sourceTree = "<group>"; };
+		7095B72020F87421008A1C3D /* DNBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNBaseCell.h; sourceTree = "<group>"; };
+		7095B72120F87421008A1C3D /* DNBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNBaseCell.m; sourceTree = "<group>"; };
+		7095B72320F87438008A1C3D /* DNBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNBaseModel.h; sourceTree = "<group>"; };
+		7095B72420F87438008A1C3D /* DNBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNBaseModel.m; sourceTree = "<group>"; };
+		7095B72720F875F4008A1C3D /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		7095B72820F875F4008A1C3D /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		7095B72920F875F4008A1C3D /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		7095B72A20F875F4008A1C3D /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		7095B72C20F875F4008A1C3D /* UIView+DNFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DNFrame.m"; sourceTree = "<group>"; };
+		7095B72D20F875F4008A1C3D /* UIImageView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extension.h"; sourceTree = "<group>"; };
+		7095B72E20F875F4008A1C3D /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		7095B72F20F875F4008A1C3D /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		7095B73020F875F4008A1C3D /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		7095B73220F875F4008A1C3D /* UIScrollView+DNRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DNRefresh.m"; sourceTree = "<group>"; };
+		7095B73320F875F4008A1C3D /* UIImageView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extension.m"; sourceTree = "<group>"; };
+		7095B73420F875F4008A1C3D /* UIView+DNFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DNFrame.h"; sourceTree = "<group>"; };
+		7095B73520F875F4008A1C3D /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		7095B73720F875F4008A1C3D /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		7095B73820F875F4008A1C3D /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		7095B73920F875F4008A1C3D /* UIScrollView+DNRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DNRefresh.h"; sourceTree = "<group>"; };
+		7095B74320F8764D008A1C3D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7095B74420F87678008A1C3D /* DNDefineHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDefineHead.h; sourceTree = "<group>"; };
+		7095B74520F8791E008A1C3D /* DNImportHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNImportHead.h; sourceTree = "<group>"; };
+		7095B74620F87972008A1C3D /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		7095B74720F87972008A1C3D /* HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		7095B74920F87993008A1C3D /* DNDBTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDBTools.h; sourceTree = "<group>"; };
+		7095B74A20F87993008A1C3D /* DNDBTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDBTools.m; sourceTree = "<group>"; };
+		7095B74C20F87D84008A1C3D /* DNNoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNNoteModel.h; sourceTree = "<group>"; };
+		7095B74D20F87D84008A1C3D /* DNNoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNNoteModel.m; sourceTree = "<group>"; };
+		7095B74F20F885BE008A1C3D /* DNNoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNNoteCell.h; sourceTree = "<group>"; };
+		7095B75020F885BE008A1C3D /* DNNoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNNoteCell.m; sourceTree = "<group>"; };
+		7095B75220F88C7B008A1C3D /* DNEditorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNEditorController.h; sourceTree = "<group>"; };
+		7095B75320F88C7B008A1C3D /* DNEditorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNEditorController.m; sourceTree = "<group>"; };
+		7095B75520F88C86008A1C3D /* DNDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDetailController.h; sourceTree = "<group>"; };
+		7095B75620F88C86008A1C3D /* DNDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDetailController.m; sourceTree = "<group>"; };
+		7095B75820F89795008A1C3D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		70F146C320F842FB00C18212 /* DNFMDBNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNFMDBNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F146DB20F842FD00C18212 /* DNFMDBNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNFMDBNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F146DF20F842FD00C18212 /* DNFMDBNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFMDBNoteTests.m; sourceTree = "<group>"; };
+		70F146E120F842FD00C18212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F146E620F842FD00C18212 /* DNFMDBNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNFMDBNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F146EA20F842FD00C18212 /* DNFMDBNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFMDBNoteUITests.m; sourceTree = "<group>"; };
+		70F146EC20F842FD00C18212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE561DF965D55A7E712BF5E9 /* Pods-DNFMDBNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNFMDBNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote.release.xcconfig"; sourceTree = "<group>"; };
+		E706CD96623D4CD29E064AC1 /* Pods-DNFMDBNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNFMDBNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote.debug.xcconfig"; sourceTree = "<group>"; };
+		FA45119A21F602762DBE4205 /* libPods-DNFMDBNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DNFMDBNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70F146C020F842FB00C18212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7095B75920F89795008A1C3D /* libsqlite3.tbd in Frameworks */,
+				2739EA2347503373745A69F4 /* libPods-DNFMDBNote.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70F146D820F842FD00C18212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70F146E320F842FD00C18212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B82228C725DF9C2FDAE24B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7095B75820F89795008A1C3D /* libsqlite3.tbd */,
+				FA45119A21F602762DBE4205 /* libPods-DNFMDBNote.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7095B6DD20F8737F008A1C3D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7095B6DE20F8737F008A1C3D /* Assets.xcassets */,
+				7095B6DF20F8737F008A1C3D /* ViewController.m */,
+				7095B6E020F8737F008A1C3D /* LaunchScreen.storyboard */,
+				7095B6E220F8737F008A1C3D /* Main.storyboard */,
+				7095B6E420F8737F008A1C3D /* main.m */,
+				7095B6E520F8737F008A1C3D /* Info.plist */,
+				7095B6E620F8737F008A1C3D /* ViewController.h */,
+				7095B74320F8764D008A1C3D /* PrefixHeader.pch */,
+				7095B74420F87678008A1C3D /* DNDefineHead.h */,
+				7095B74520F8791E008A1C3D /* DNImportHead.h */,
+				7078158C20FC9F4F00B3A30A /* DNInstanceHead.h */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7095B6E720F8737F008A1C3D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7095B6E820F8737F008A1C3D /* AppDelegate.h */,
+				7095B6E920F8737F008A1C3D /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7095B6EA20F8737F008A1C3D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				7095B6EB20F8737F008A1C3D /* Home */,
+				7095B6EF20F8737F008A1C3D /* Third */,
+				7095B6F320F8737F008A1C3D /* Second */,
+				7095B6F720F8737F008A1C3D /* Fourth */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		7095B6EB20F8737F008A1C3D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7095B74620F87972008A1C3D /* HomeController.h */,
+				7095B74720F87972008A1C3D /* HomeController.m */,
+				7095B6EC20F8737F008A1C3D /* Controller */,
+				7095B6ED20F8737F008A1C3D /* Model */,
+				7095B6EE20F8737F008A1C3D /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7095B6EC20F8737F008A1C3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7095B75220F88C7B008A1C3D /* DNEditorController.h */,
+				7095B75320F88C7B008A1C3D /* DNEditorController.m */,
+				7095B75520F88C86008A1C3D /* DNDetailController.h */,
+				7095B75620F88C86008A1C3D /* DNDetailController.m */,
+				7078158420FC7EF300B3A30A /* DNPersonController.h */,
+				7078158520FC7EF300B3A30A /* DNPersonController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7095B6ED20F8737F008A1C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7095B74920F87993008A1C3D /* DNDBTools.h */,
+				7095B74A20F87993008A1C3D /* DNDBTools.m */,
+				7095B74C20F87D84008A1C3D /* DNNoteModel.h */,
+				7095B74D20F87D84008A1C3D /* DNNoteModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7095B6EE20F8737F008A1C3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7095B74F20F885BE008A1C3D /* DNNoteCell.h */,
+				7095B75020F885BE008A1C3D /* DNNoteCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7095B6EF20F8737F008A1C3D /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				7095B6F020F8737F008A1C3D /* Controller */,
+				7095B6F120F8737F008A1C3D /* Model */,
+				7095B6F220F8737F008A1C3D /* View */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		7095B6F020F8737F008A1C3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7095B6F120F8737F008A1C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7095B6F220F8737F008A1C3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7095B6F320F8737F008A1C3D /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				7095B6F420F8737F008A1C3D /* Controller */,
+				7095B6F520F8737F008A1C3D /* Model */,
+				7095B6F620F8737F008A1C3D /* View */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		7095B6F420F8737F008A1C3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7095B6F520F8737F008A1C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7095B6F620F8737F008A1C3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7095B6F720F8737F008A1C3D /* Fourth */ = {
+			isa = PBXGroup;
+			children = (
+				7095B6F820F8737F008A1C3D /* Controller */,
+				7095B6F920F8737F008A1C3D /* Model */,
+				7095B6FA20F8737F008A1C3D /* View */,
+			);
+			path = Fourth;
+			sourceTree = "<group>";
+		};
+		7095B6F820F8737F008A1C3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7095B6F920F8737F008A1C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7095B6FA20F8737F008A1C3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7095B6FB20F8737F008A1C3D /* DNTools */ = {
+			isa = PBXGroup;
+			children = (
+				7078158220FC701600B3A30A /* DNAlert.h */,
+				7078158120FC701600B3A30A /* DNAlert.m */,
+				7095B72620F875F4008A1C3D /* Fundation (Category) */,
+				7095B72B20F875F4008A1C3D /* UIKit (Category) */,
+			);
+			path = DNTools;
+			sourceTree = "<group>";
+		};
+		7095B6FC20F8737F008A1C3D /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		7095B6FD20F8737F008A1C3D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7095B71420F873CE008A1C3D /* DNBaseViewController.h */,
+				7095B71520F873CE008A1C3D /* DNBaseViewController.m */,
+				7095B71720F873E3008A1C3D /* DNNavigationController.h */,
+				7095B71820F873E3008A1C3D /* DNNavigationController.m */,
+				7095B71A20F873FD008A1C3D /* DNTabBarController.h */,
+				7095B71B20F873FD008A1C3D /* DNTabBarController.m */,
+				7095B71D20F8740B008A1C3D /* DNBaseView.h */,
+				7095B71E20F8740B008A1C3D /* DNBaseView.m */,
+				7095B72020F87421008A1C3D /* DNBaseCell.h */,
+				7095B72120F87421008A1C3D /* DNBaseCell.m */,
+				7095B72320F87438008A1C3D /* DNBaseModel.h */,
+				7095B72420F87438008A1C3D /* DNBaseModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7095B72620F875F4008A1C3D /* Fundation (Category) */ = {
+			isa = PBXGroup;
+			children = (
+				7095B72A20F875F4008A1C3D /* NSArray+Extension.h */,
+				7095B72720F875F4008A1C3D /* NSArray+Extension.m */,
+				7095B72820F875F4008A1C3D /* NSString+Extension.h */,
+				7095B72920F875F4008A1C3D /* NSString+Extension.m */,
+			);
+			path = "Fundation (Category)";
+			sourceTree = "<group>";
+		};
+		7095B72B20F875F4008A1C3D /* UIKit (Category) */ = {
+			isa = PBXGroup;
+			children = (
+				7095B73420F875F4008A1C3D /* UIView+DNFrame.h */,
+				7095B72C20F875F4008A1C3D /* UIView+DNFrame.m */,
+				7095B72E20F875F4008A1C3D /* UIColor+Extension.h */,
+				7095B73520F875F4008A1C3D /* UIColor+Extension.m */,
+				7095B73720F875F4008A1C3D /* UIImage+Extension.h */,
+				7095B73020F875F4008A1C3D /* UIImage+Extension.m */,
+				7095B72D20F875F4008A1C3D /* UIImageView+Extension.h */,
+				7095B73320F875F4008A1C3D /* UIImageView+Extension.m */,
+				7078158720FC83F500B3A30A /* UILabel+Extension.h */,
+				7078158820FC83F500B3A30A /* UILabel+Extension.m */,
+				7095B72F20F875F4008A1C3D /* UIButton+Extension.h */,
+				7095B73820F875F4008A1C3D /* UIButton+Extension.m */,
+				7095B73920F875F4008A1C3D /* UIScrollView+DNRefresh.h */,
+				7095B73220F875F4008A1C3D /* UIScrollView+DNRefresh.m */,
+			);
+			path = "UIKit (Category)";
+			sourceTree = "<group>";
+		};
+		70F146BA20F842FB00C18212 = {
+			isa = PBXGroup;
+			children = (
+				70F146C520F842FB00C18212 /* DNFMDBNote */,
+				70F146DE20F842FD00C18212 /* DNFMDBNoteTests */,
+				70F146E920F842FD00C18212 /* DNFMDBNoteUITests */,
+				70F146C420F842FB00C18212 /* Products */,
+				93C9A086D9A5F388BB978F96 /* Pods */,
+				4B82228C725DF9C2FDAE24B9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		70F146C420F842FB00C18212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70F146C320F842FB00C18212 /* DNFMDBNote.app */,
+				70F146DB20F842FD00C18212 /* DNFMDBNoteTests.xctest */,
+				70F146E620F842FD00C18212 /* DNFMDBNoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70F146C520F842FB00C18212 /* DNFMDBNote */ = {
+			isa = PBXGroup;
+			children = (
+				7095B6E720F8737F008A1C3D /* AppDelegate */,
+				7095B6FD20F8737F008A1C3D /* Base */,
+				7095B6EA20F8737F008A1C3D /* Class */,
+				7095B6FB20F8737F008A1C3D /* DNTools */,
+				7095B6FC20F8737F008A1C3D /* NetWork */,
+				7095B6DD20F8737F008A1C3D /* Resource */,
+			);
+			path = DNFMDBNote;
+			sourceTree = "<group>";
+		};
+		70F146DE20F842FD00C18212 /* DNFMDBNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				70F146DF20F842FD00C18212 /* DNFMDBNoteTests.m */,
+				70F146E120F842FD00C18212 /* Info.plist */,
+			);
+			path = DNFMDBNoteTests;
+			sourceTree = "<group>";
+		};
+		70F146E920F842FD00C18212 /* DNFMDBNoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70F146EA20F842FD00C18212 /* DNFMDBNoteUITests.m */,
+				70F146EC20F842FD00C18212 /* Info.plist */,
+			);
+			path = DNFMDBNoteUITests;
+			sourceTree = "<group>";
+		};
+		93C9A086D9A5F388BB978F96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E706CD96623D4CD29E064AC1 /* Pods-DNFMDBNote.debug.xcconfig */,
+				BE561DF965D55A7E712BF5E9 /* Pods-DNFMDBNote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70F146C220F842FB00C18212 /* DNFMDBNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70F146EF20F842FD00C18212 /* Build configuration list for PBXNativeTarget "DNFMDBNote" */;
+			buildPhases = (
+				B930DB80550238576CEAE056 /* [CP] Check Pods Manifest.lock */,
+				70F146BF20F842FB00C18212 /* Sources */,
+				70F146C020F842FB00C18212 /* Frameworks */,
+				70F146C120F842FB00C18212 /* Resources */,
+				AB4D7A7D70DCCB0782043571 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNFMDBNote;
+			productName = DNFMDBNote;
+			productReference = 70F146C320F842FB00C18212 /* DNFMDBNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70F146DA20F842FD00C18212 /* DNFMDBNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70F146F220F842FD00C18212 /* Build configuration list for PBXNativeTarget "DNFMDBNoteTests" */;
+			buildPhases = (
+				70F146D720F842FD00C18212 /* Sources */,
+				70F146D820F842FD00C18212 /* Frameworks */,
+				70F146D920F842FD00C18212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70F146DD20F842FD00C18212 /* PBXTargetDependency */,
+			);
+			name = DNFMDBNoteTests;
+			productName = DNFMDBNoteTests;
+			productReference = 70F146DB20F842FD00C18212 /* DNFMDBNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70F146E520F842FD00C18212 /* DNFMDBNoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70F146F520F842FD00C18212 /* Build configuration list for PBXNativeTarget "DNFMDBNoteUITests" */;
+			buildPhases = (
+				70F146E220F842FD00C18212 /* Sources */,
+				70F146E320F842FD00C18212 /* Frameworks */,
+				70F146E420F842FD00C18212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70F146E820F842FD00C18212 /* PBXTargetDependency */,
+			);
+			name = DNFMDBNoteUITests;
+			productName = DNFMDBNoteUITests;
+			productReference = 70F146E620F842FD00C18212 /* DNFMDBNoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70F146BB20F842FB00C18212 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = zjs;
+				TargetAttributes = {
+					70F146C220F842FB00C18212 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					70F146DA20F842FD00C18212 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 70F146C220F842FB00C18212;
+					};
+					70F146E520F842FD00C18212 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 70F146C220F842FB00C18212;
+					};
+				};
+			};
+			buildConfigurationList = 70F146BE20F842FB00C18212 /* Build configuration list for PBXProject "DNFMDBNote" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70F146BA20F842FB00C18212;
+			productRefGroup = 70F146C420F842FB00C18212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70F146C220F842FB00C18212 /* DNFMDBNote */,
+				70F146DA20F842FD00C18212 /* DNFMDBNoteTests */,
+				70F146E520F842FD00C18212 /* DNFMDBNoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70F146C120F842FB00C18212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7095B6FE20F8737F008A1C3D /* Assets.xcassets in Resources */,
+				7095B70120F8737F008A1C3D /* Main.storyboard in Resources */,
+				7095B70020F8737F008A1C3D /* LaunchScreen.storyboard in Resources */,
+				7095B70320F8737F008A1C3D /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70F146D920F842FD00C18212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70F146E420F842FD00C18212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AB4D7A7D70DCCB0782043571 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B930DB80550238576CEAE056 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DNFMDBNote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70F146BF20F842FB00C18212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7095B73C20F875F4008A1C3D /* UIView+DNFrame.m in Sources */,
+				7095B74820F87972008A1C3D /* HomeController.m in Sources */,
+				7095B73E20F875F4008A1C3D /* UIScrollView+DNRefresh.m in Sources */,
+				7095B75120F885BE008A1C3D /* DNNoteCell.m in Sources */,
+				7095B70220F8737F008A1C3D /* main.m in Sources */,
+				7095B74020F875F4008A1C3D /* UIColor+Extension.m in Sources */,
+				7095B71C20F873FD008A1C3D /* DNTabBarController.m in Sources */,
+				7095B73F20F875F4008A1C3D /* UIImageView+Extension.m in Sources */,
+				7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */,
+				7095B75720F88C86008A1C3D /* DNDetailController.m in Sources */,
+				7095B75420F88C7B008A1C3D /* DNEditorController.m in Sources */,
+				7095B71620F873CE008A1C3D /* DNBaseViewController.m in Sources */,
+				7095B74220F875F4008A1C3D /* UIButton+Extension.m in Sources */,
+				7095B74E20F87D84008A1C3D /* DNNoteModel.m in Sources */,
+				7095B71920F873E3008A1C3D /* DNNavigationController.m in Sources */,
+				7095B72220F87421008A1C3D /* DNBaseCell.m in Sources */,
+				7095B73B20F875F4008A1C3D /* NSString+Extension.m in Sources */,
+				7095B72520F87438008A1C3D /* DNBaseModel.m in Sources */,
+				7095B73D20F875F4008A1C3D /* UIImage+Extension.m in Sources */,
+				7095B73A20F875F4008A1C3D /* NSArray+Extension.m in Sources */,
+				7095B70420F8737F008A1C3D /* AppDelegate.m in Sources */,
+				7095B71F20F8740B008A1C3D /* DNBaseView.m in Sources */,
+				7078158320FC701600B3A30A /* DNAlert.m in Sources */,
+				7095B6FF20F8737F008A1C3D /* ViewController.m in Sources */,
+				7078158620FC7EF300B3A30A /* DNPersonController.m in Sources */,
+				7095B74B20F87993008A1C3D /* DNDBTools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70F146D720F842FD00C18212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70F146E020F842FD00C18212 /* DNFMDBNoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70F146E220F842FD00C18212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70F146EB20F842FD00C18212 /* DNFMDBNoteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70F146DD20F842FD00C18212 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70F146C220F842FB00C18212 /* DNFMDBNote */;
+			targetProxy = 70F146DC20F842FD00C18212 /* PBXContainerItemProxy */;
+		};
+		70F146E820F842FD00C18212 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70F146C220F842FB00C18212 /* DNFMDBNote */;
+			targetProxy = 70F146E720F842FD00C18212 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7095B6E020F8737F008A1C3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7095B6E120F8737F008A1C3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7095B6E220F8737F008A1C3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7095B6E320F8737F008A1C3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70F146ED20F842FD00C18212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		70F146EE20F842FD00C18212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70F146F020F842FD00C18212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E706CD96623D4CD29E064AC1 /* Pods-DNFMDBNote.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DNFMDBNote/Resource/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/DNFMDBNote/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Remember.DNFMDBNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		70F146F120F842FD00C18212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE561DF965D55A7E712BF5E9 /* Pods-DNFMDBNote.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DNFMDBNote/Resource/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/DNFMDBNote/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Remember.DNFMDBNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		70F146F320F842FD00C18212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DNFMDBNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Remember.DNFMDBNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNFMDBNote.app/DNFMDBNote";
+			};
+			name = Debug;
+		};
+		70F146F420F842FD00C18212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DNFMDBNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Remember.DNFMDBNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNFMDBNote.app/DNFMDBNote";
+			};
+			name = Release;
+		};
+		70F146F620F842FD00C18212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DNFMDBNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Remember.DNFMDBNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DNFMDBNote;
+			};
+			name = Debug;
+		};
+		70F146F720F842FD00C18212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DNFMDBNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Remember.DNFMDBNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DNFMDBNote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70F146BE20F842FB00C18212 /* Build configuration list for PBXProject "DNFMDBNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70F146ED20F842FD00C18212 /* Debug */,
+				70F146EE20F842FD00C18212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70F146EF20F842FD00C18212 /* Build configuration list for PBXNativeTarget "DNFMDBNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70F146F020F842FD00C18212 /* Debug */,
+				70F146F120F842FD00C18212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70F146F220F842FD00C18212 /* Build configuration list for PBXNativeTarget "DNFMDBNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70F146F320F842FD00C18212 /* Debug */,
+				70F146F420F842FD00C18212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70F146F520F842FD00C18212 /* Build configuration list for PBXNativeTarget "DNFMDBNoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70F146F620F842FD00C18212 /* Debug */,
+				70F146F720F842FD00C18212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70F146BB20F842FB00C18212 /* Project object */;
+}

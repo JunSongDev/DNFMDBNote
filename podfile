@@ -1,0 +1,6 @@
+target 'DNFMDBNote' do
+pod 'MJRefresh'
+pod 'Masonry'
+pod 'Toast'
+pod 'FMDB'
+end
