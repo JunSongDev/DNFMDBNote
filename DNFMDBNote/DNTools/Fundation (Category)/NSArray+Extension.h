@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 数组倒序 */
 - (NSArray *)dn_reverse;
 
+/** 获取 model 类中的属性 */
++ (instancetype)dn_getPropertiesForModel:(Class)model;
+
 @end
 
 @interface NSMutableArray (Extension)
