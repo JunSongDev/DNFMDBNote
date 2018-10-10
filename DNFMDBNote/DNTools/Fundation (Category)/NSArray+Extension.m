@@ -50,6 +50,11 @@
         const char *cName = property_getName(property);
         // 转化为 OC 字符串
         NSString *objcName = [NSString stringWithCString:cName encoding:NSUTF8StringEncoding];
+        // 获取属性的名称对应的类型 C语言字符串
+        const char *pType = property_getAttributes(property);
+        // 转化为 OC 字符串
+        NSString *objcType = [NSString stringWithUTF8String:pType];
+        NSLog(@"%@",objcType);
         // 存数组
         [array addObject:objcName];
     }

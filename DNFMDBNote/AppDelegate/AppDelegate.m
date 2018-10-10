@@ -10,6 +10,7 @@
 #import "DNNavigationController.h"
 #import "HomeController.h"
 #import "DNDBTools.h"
+#import "DNNoteModel.h"
 
 @interface AppDelegate ()
 

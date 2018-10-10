@@ -8,8 +8,10 @@
 
 #import "DNDBTools.h"
 #import "DNNoteModel.h"
+#import "NSArray+Extension.h"
 
 static FMDatabase * _db;
+static Class *_class;
 
 @implementation DNDBTools
 

@@ -16,7 +16,6 @@
 		7095B70020F8737F008A1C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E020F8737F008A1C3D /* LaunchScreen.storyboard */; };
 		7095B70120F8737F008A1C3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E220F8737F008A1C3D /* Main.storyboard */; };
 		7095B70220F8737F008A1C3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6E420F8737F008A1C3D /* main.m */; };
-		7095B70320F8737F008A1C3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E520F8737F008A1C3D /* Info.plist */; };
 		7095B70420F8737F008A1C3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6E920F8737F008A1C3D /* AppDelegate.m */; };
 		7095B71620F873CE008A1C3D /* DNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B71520F873CE008A1C3D /* DNBaseViewController.m */; };
 		7095B71920F873E3008A1C3D /* DNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B71820F873E3008A1C3D /* DNNavigationController.m */; };
@@ -584,7 +583,6 @@
 				7095B6FE20F8737F008A1C3D /* Assets.xcassets in Resources */,
 				7095B70120F8737F008A1C3D /* Main.storyboard in Resources */,
 				7095B70020F8737F008A1C3D /* LaunchScreen.storyboard in Resources */,
-				7095B70320F8737F008A1C3D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

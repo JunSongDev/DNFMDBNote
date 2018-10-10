@@ -12,11 +12,13 @@
 #import "DNDetailController.h"
 #import "DNEditorController.h"
 #import "DNPersonController.h"
+#import "NSArray+Extension.h"
 
 @interface HomeController ()
 
 @property (nonatomic, strong) UIButton * insertButton;
 @property (nonatomic, strong) NSMutableArray * dataArr;
+@property (nonatomic, strong) NSMutableArray * topArray;
 @end
 
 @implementation HomeController
@@ -33,6 +35,9 @@
     [self addConstrainsForSuper];
     
     [self setNavigationBarItem];
+    
+    NSArray * array = [NSArray dn_getPropertiesForModel:[DNNoteModel class]];
+    NSLog(@"%@",array);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -199,7 +204,9 @@
     
     UITableViewRowAction * rowAction2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"置顶" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         
-        [self.dataArr exchangeObjectAtIndex:self.dataArr.count - 1 withObjectAtIndex:indexPath.section];
+        id obj = self.dataArr[indexPath.section];
+        [self.dataArr removeObject:obj];
+        [self.dataArr insertObject:obj atIndex:0];
         [self.tableView reloadData];
     }];
     
@@ -231,5 +238,12 @@
 #pragma mark -- NetWork Methods
 
 #pragma mark -- Setter && Getter
+
+- (NSMutableArray *)topArray {
+    if (!_topArray) {
+        _topArray = [NSMutableArray array];
+    }
+    return _topArray;
+}
 
 @end
