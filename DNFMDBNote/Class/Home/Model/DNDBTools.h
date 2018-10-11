@@ -8,7 +8,7 @@
 
 #import "DNBaseModel.h"
 #import "DNNoteModel.h"
-#import <FMDB.h>
+#import <FMDB/FMDB.h>
 
 @interface DNDBTools : DNBaseModel
 

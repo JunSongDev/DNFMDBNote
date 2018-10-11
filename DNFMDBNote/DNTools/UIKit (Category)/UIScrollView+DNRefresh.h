@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MJRefresh.h>
+#import <MJRefresh/MJRefresh.h>
 
 typedef void(^RefreshBlock)(void);
 typedef void(^RefHeadGIFBlock)(MJRefreshGifHeader *head);

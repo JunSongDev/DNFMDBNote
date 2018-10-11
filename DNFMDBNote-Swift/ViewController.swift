@@ -33,11 +33,11 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        let navigateBar = UINavigationBar.appearance()
-//        let navigateAttribute = NSMutableDictionary()
-//        navigateAttribute[NSAttributedString.Key.foregroundColor] = UIColor.white
-//        navigateAttribute[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: 20)
-//        navigateBar.titleTextAttributes = navigateAttribute as? [NSAttributedString.Key : Any]
+        let navigateBar = UINavigationBar.appearance()
+        var navigateAttribute = Dictionary<NSAttributedString.Key , Any>()
+        navigateAttribute[NSAttributedString.Key.foregroundColor] = UIColor.white
+        navigateAttribute[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: 20)
+        navigateBar.titleTextAttributes = navigateAttribute
         // 设置标题 按钮
         self.tableView.reloadData()
     }
