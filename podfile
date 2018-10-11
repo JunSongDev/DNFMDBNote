@@ -1,6 +1,14 @@
+platform :ios, '10.0'
+
+use_frameworks!
+
 target 'DNFMDBNote' do
-pod 'MJRefresh'
-pod 'Masonry'
-pod 'Toast'
-pod 'FMDB'
+    pod 'MJRefresh'
+    pod 'Masonry'
+    pod 'Toast'
+    pod 'FMDB'
+end
+
+target 'DNFMDBNote-Swift' do
+    pod 'FMDB'
 end

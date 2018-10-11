@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2739EA2347503373745A69F4 /* libPods-DNFMDBNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA45119A21F602762DBE4205 /* libPods-DNFMDBNote.a */; };
+		20CDB6F280974489B1C46AFC /* Pods_DNFMDBNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D164BB8A19564932E1C5644 /* Pods_DNFMDBNote.framework */; };
 		7078158320FC701600B3A30A /* DNAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158120FC701600B3A30A /* DNAlert.m */; };
 		7078158620FC7EF300B3A30A /* DNPersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158520FC7EF300B3A30A /* DNPersonController.m */; };
 		7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158820FC83F500B3A30A /* UILabel+Extension.m */; };
+		707E6BAD216F1BE300DE8683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BAC216F1BE300DE8683 /* AppDelegate.swift */; };
+		707E6BAF216F1BE300DE8683 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BAE216F1BE300DE8683 /* ViewController.swift */; };
+		707E6BB2216F1BE300DE8683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707E6BB0216F1BE300DE8683 /* Main.storyboard */; };
+		707E6BB4216F1BE300DE8683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 707E6BB3216F1BE300DE8683 /* Assets.xcassets */; };
+		707E6BB7216F1BE300DE8683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707E6BB5216F1BE300DE8683 /* LaunchScreen.storyboard */; };
+		707E6BD9216F1C7100DE8683 /* DNDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BD8216F1C7100DE8683 /* DNDataManager.swift */; };
 		7095B6FE20F8737F008A1C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6DE20F8737F008A1C3D /* Assets.xcassets */; };
 		7095B6FF20F8737F008A1C3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6DF20F8737F008A1C3D /* ViewController.m */; };
 		7095B70020F8737F008A1C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E020F8737F008A1C3D /* LaunchScreen.storyboard */; };
@@ -38,11 +44,30 @@
 		7095B75420F88C7B008A1C3D /* DNEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75320F88C7B008A1C3D /* DNEditorController.m */; };
 		7095B75720F88C86008A1C3D /* DNDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75620F88C86008A1C3D /* DNDetailController.m */; };
 		7095B75920F89795008A1C3D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7095B75820F89795008A1C3D /* libsqlite3.tbd */; };
-		70F146E020F842FD00C18212 /* DNFMDBNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F146DF20F842FD00C18212 /* DNFMDBNoteTests.m */; };
-		70F146EB20F842FD00C18212 /* DNFMDBNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F146EA20F842FD00C18212 /* DNFMDBNoteUITests.m */; };
+		70FF3AA7216F20B5002B0F51 /* DNNoteCellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AA6216F20B5002B0F51 /* DNNoteCellSwift.swift */; };
+		70FF3AA9216F20DD002B0F51 /* DNEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AA8216F20DD002B0F51 /* DNEditorViewController.swift */; };
+		70FF3AAB216F20E7002B0F51 /* DNDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AAA216F20E7002B0F51 /* DNDetailViewController.swift */; };
+		70FF3AAD216F2504002B0F51 /* DNNoteModelSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AAC216F2504002B0F51 /* DNNoteModelSwift.swift */; };
+		70FF3AAF216F2925002B0F51 /* DNNoteConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AAE216F2925002B0F51 /* DNNoteConstant.swift */; };
+		70FF3AB1216F2EAC002B0F51 /* DNNoteAlertTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AB0216F2EAC002B0F51 /* DNNoteAlertTool.swift */; };
+		FD48E7154D7DFCE76BF18791 /* Pods_DNFMDBNote_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCD37B0BBFA1E5FAD20AE23 /* Pods_DNFMDBNote_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		707E6BBE216F1BE400DE8683 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70F146BB20F842FB00C18212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 707E6BA9216F1BE200DE8683;
+			remoteInfo = "DNFMDBNote-Swift";
+		};
+		707E6BC9216F1BE400DE8683 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70F146BB20F842FB00C18212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 707E6BA9216F1BE200DE8683;
+			remoteInfo = "DNFMDBNote-Swift";
+		};
 		70F146DC20F842FD00C18212 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 70F146BB20F842FB00C18212 /* Project object */;
@@ -60,6 +85,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48263B3328ADBB8B10392552 /* Pods-DNFMDBNote-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNFMDBNote-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNFMDBNote-Swift/Pods-DNFMDBNote-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		5BCD37B0BBFA1E5FAD20AE23 /* Pods_DNFMDBNote_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNFMDBNote_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7078158120FC701600B3A30A /* DNAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlert.m; sourceTree = "<group>"; };
 		7078158220FC701600B3A30A /* DNAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlert.h; sourceTree = "<group>"; };
 		7078158420FC7EF300B3A30A /* DNPersonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPersonController.h; sourceTree = "<group>"; };
@@ -67,6 +94,16 @@
 		7078158720FC83F500B3A30A /* UILabel+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		7078158820FC83F500B3A30A /* UILabel+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		7078158C20FC9F4F00B3A30A /* DNInstanceHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNInstanceHead.h; sourceTree = "<group>"; };
+		707E6BAA216F1BE200DE8683 /* DNFMDBNote-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DNFMDBNote-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		707E6BAC216F1BE300DE8683 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		707E6BAE216F1BE300DE8683 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		707E6BB1216F1BE300DE8683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		707E6BB3216F1BE300DE8683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		707E6BB6216F1BE300DE8683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		707E6BB8216F1BE300DE8683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		707E6BBD216F1BE400DE8683 /* DNFMDBNote-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNFMDBNote-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		707E6BC8216F1BE400DE8683 /* DNFMDBNote-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNFMDBNote-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		707E6BD8216F1C7100DE8683 /* DNDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNDataManager.swift; sourceTree = "<group>"; };
 		7095B6DE20F8737F008A1C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7095B6DF20F8737F008A1C3D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7095B6E120F8737F008A1C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,23 +159,48 @@
 		7095B75820F89795008A1C3D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		70F146C320F842FB00C18212 /* DNFMDBNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNFMDBNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F146DB20F842FD00C18212 /* DNFMDBNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNFMDBNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		70F146DF20F842FD00C18212 /* DNFMDBNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFMDBNoteTests.m; sourceTree = "<group>"; };
-		70F146E120F842FD00C18212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F146E620F842FD00C18212 /* DNFMDBNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNFMDBNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		70F146EA20F842FD00C18212 /* DNFMDBNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFMDBNoteUITests.m; sourceTree = "<group>"; };
-		70F146EC20F842FD00C18212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70FF3AA6216F20B5002B0F51 /* DNNoteCellSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNNoteCellSwift.swift; sourceTree = "<group>"; };
+		70FF3AA8216F20DD002B0F51 /* DNEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNEditorViewController.swift; sourceTree = "<group>"; };
+		70FF3AAA216F20E7002B0F51 /* DNDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNDetailViewController.swift; sourceTree = "<group>"; };
+		70FF3AAC216F2504002B0F51 /* DNNoteModelSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNNoteModelSwift.swift; sourceTree = "<group>"; };
+		70FF3AAE216F2925002B0F51 /* DNNoteConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNNoteConstant.swift; sourceTree = "<group>"; };
+		70FF3AB0216F2EAC002B0F51 /* DNNoteAlertTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNNoteAlertTool.swift; sourceTree = "<group>"; };
+		9D164BB8A19564932E1C5644 /* Pods_DNFMDBNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNFMDBNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8DEB56514B20E58446C8128 /* Pods-DNFMDBNote-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNFMDBNote-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNFMDBNote-Swift/Pods-DNFMDBNote-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		BE561DF965D55A7E712BF5E9 /* Pods-DNFMDBNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNFMDBNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote.release.xcconfig"; sourceTree = "<group>"; };
 		E706CD96623D4CD29E064AC1 /* Pods-DNFMDBNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNFMDBNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote.debug.xcconfig"; sourceTree = "<group>"; };
-		FA45119A21F602762DBE4205 /* libPods-DNFMDBNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DNFMDBNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		707E6BA7216F1BE200DE8683 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD48E7154D7DFCE76BF18791 /* Pods_DNFMDBNote_Swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707E6BBA216F1BE400DE8683 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707E6BC5216F1BE400DE8683 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70F146C020F842FB00C18212 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7095B75920F89795008A1C3D /* libsqlite3.tbd in Frameworks */,
-				2739EA2347503373745A69F4 /* libPods-DNFMDBNote.a in Frameworks */,
+				20CDB6F280974489B1C46AFC /* Pods_DNFMDBNote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +225,30 @@
 			isa = PBXGroup;
 			children = (
 				7095B75820F89795008A1C3D /* libsqlite3.tbd */,
-				FA45119A21F602762DBE4205 /* libPods-DNFMDBNote.a */,
+				9D164BB8A19564932E1C5644 /* Pods_DNFMDBNote.framework */,
+				5BCD37B0BBFA1E5FAD20AE23 /* Pods_DNFMDBNote_Swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		707E6BAB216F1BE300DE8683 /* DNFMDBNote-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				707E6BD8216F1C7100DE8683 /* DNDataManager.swift */,
+				707E6BAC216F1BE300DE8683 /* AppDelegate.swift */,
+				707E6BAE216F1BE300DE8683 /* ViewController.swift */,
+				707E6BB0216F1BE300DE8683 /* Main.storyboard */,
+				707E6BB3216F1BE300DE8683 /* Assets.xcassets */,
+				707E6BB5216F1BE300DE8683 /* LaunchScreen.storyboard */,
+				707E6BB8216F1BE300DE8683 /* Info.plist */,
+				70FF3AA6216F20B5002B0F51 /* DNNoteCellSwift.swift */,
+				70FF3AA8216F20DD002B0F51 /* DNEditorViewController.swift */,
+				70FF3AAA216F20E7002B0F51 /* DNDetailViewController.swift */,
+				70FF3AAC216F2504002B0F51 /* DNNoteModelSwift.swift */,
+				70FF3AAE216F2925002B0F51 /* DNNoteConstant.swift */,
+				70FF3AB0216F2EAC002B0F51 /* DNNoteAlertTool.swift */,
+			);
+			path = "DNFMDBNote-Swift";
 			sourceTree = "<group>";
 		};
 		7095B6DD20F8737F008A1C3D /* Resource */ = {
@@ -417,8 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				70F146C520F842FB00C18212 /* DNFMDBNote */,
-				70F146DE20F842FD00C18212 /* DNFMDBNoteTests */,
-				70F146E920F842FD00C18212 /* DNFMDBNoteUITests */,
+				707E6BAB216F1BE300DE8683 /* DNFMDBNote-Swift */,
 				70F146C420F842FB00C18212 /* Products */,
 				93C9A086D9A5F388BB978F96 /* Pods */,
 				4B82228C725DF9C2FDAE24B9 /* Frameworks */,
@@ -431,6 +513,9 @@
 				70F146C320F842FB00C18212 /* DNFMDBNote.app */,
 				70F146DB20F842FD00C18212 /* DNFMDBNoteTests.xctest */,
 				70F146E620F842FD00C18212 /* DNFMDBNoteUITests.xctest */,
+				707E6BAA216F1BE200DE8683 /* DNFMDBNote-Swift.app */,
+				707E6BBD216F1BE400DE8683 /* DNFMDBNote-SwiftTests.xctest */,
+				707E6BC8216F1BE400DE8683 /* DNFMDBNote-SwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -448,29 +533,13 @@
 			path = DNFMDBNote;
 			sourceTree = "<group>";
 		};
-		70F146DE20F842FD00C18212 /* DNFMDBNoteTests */ = {
-			isa = PBXGroup;
-			children = (
-				70F146DF20F842FD00C18212 /* DNFMDBNoteTests.m */,
-				70F146E120F842FD00C18212 /* Info.plist */,
-			);
-			path = DNFMDBNoteTests;
-			sourceTree = "<group>";
-		};
-		70F146E920F842FD00C18212 /* DNFMDBNoteUITests */ = {
-			isa = PBXGroup;
-			children = (
-				70F146EA20F842FD00C18212 /* DNFMDBNoteUITests.m */,
-				70F146EC20F842FD00C18212 /* Info.plist */,
-			);
-			path = DNFMDBNoteUITests;
-			sourceTree = "<group>";
-		};
 		93C9A086D9A5F388BB978F96 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				E706CD96623D4CD29E064AC1 /* Pods-DNFMDBNote.debug.xcconfig */,
 				BE561DF965D55A7E712BF5E9 /* Pods-DNFMDBNote.release.xcconfig */,
+				48263B3328ADBB8B10392552 /* Pods-DNFMDBNote-Swift.debug.xcconfig */,
+				A8DEB56514B20E58446C8128 /* Pods-DNFMDBNote-Swift.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -478,6 +547,61 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		707E6BA9216F1BE200DE8683 /* DNFMDBNote-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707E6BD5216F1BE400DE8683 /* Build configuration list for PBXNativeTarget "DNFMDBNote-Swift" */;
+			buildPhases = (
+				BEA5D4EECB6D4FE9C6B2F8F1 /* [CP] Check Pods Manifest.lock */,
+				707E6BA6216F1BE200DE8683 /* Sources */,
+				707E6BA7216F1BE200DE8683 /* Frameworks */,
+				707E6BA8216F1BE200DE8683 /* Resources */,
+				03DA4B0198E70CC5D7DD7090 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DNFMDBNote-Swift";
+			productName = "DNFMDBNote-Swift";
+			productReference = 707E6BAA216F1BE200DE8683 /* DNFMDBNote-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		707E6BBC216F1BE400DE8683 /* DNFMDBNote-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707E6BD6216F1BE400DE8683 /* Build configuration list for PBXNativeTarget "DNFMDBNote-SwiftTests" */;
+			buildPhases = (
+				707E6BB9216F1BE400DE8683 /* Sources */,
+				707E6BBA216F1BE400DE8683 /* Frameworks */,
+				707E6BBB216F1BE400DE8683 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				707E6BBF216F1BE400DE8683 /* PBXTargetDependency */,
+			);
+			name = "DNFMDBNote-SwiftTests";
+			productName = "DNFMDBNote-SwiftTests";
+			productReference = 707E6BBD216F1BE400DE8683 /* DNFMDBNote-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		707E6BC7216F1BE400DE8683 /* DNFMDBNote-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 707E6BD7216F1BE400DE8683 /* Build configuration list for PBXNativeTarget "DNFMDBNote-SwiftUITests" */;
+			buildPhases = (
+				707E6BC4216F1BE400DE8683 /* Sources */,
+				707E6BC5216F1BE400DE8683 /* Frameworks */,
+				707E6BC6216F1BE400DE8683 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				707E6BCA216F1BE400DE8683 /* PBXTargetDependency */,
+			);
+			name = "DNFMDBNote-SwiftUITests";
+			productName = "DNFMDBNote-SwiftUITests";
+			productReference = 707E6BC8216F1BE400DE8683 /* DNFMDBNote-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		70F146C220F842FB00C18212 /* DNFMDBNote */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70F146EF20F842FD00C18212 /* Build configuration list for PBXNativeTarget "DNFMDBNote" */;
@@ -486,7 +610,7 @@
 				70F146BF20F842FB00C18212 /* Sources */,
 				70F146C020F842FB00C18212 /* Frameworks */,
 				70F146C120F842FB00C18212 /* Resources */,
-				AB4D7A7D70DCCB0782043571 /* [CP] Copy Pods Resources */,
+				4A737E290DE7AA8427F1AA41 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -539,9 +663,21 @@
 		70F146BB20F842FB00C18212 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = zjs;
 				TargetAttributes = {
+					707E6BA9216F1BE200DE8683 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					707E6BBC216F1BE400DE8683 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 707E6BA9216F1BE200DE8683;
+					};
+					707E6BC7216F1BE400DE8683 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 707E6BA9216F1BE200DE8683;
+					};
 					70F146C220F842FB00C18212 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -571,11 +707,38 @@
 				70F146C220F842FB00C18212 /* DNFMDBNote */,
 				70F146DA20F842FD00C18212 /* DNFMDBNoteTests */,
 				70F146E520F842FD00C18212 /* DNFMDBNoteUITests */,
+				707E6BA9216F1BE200DE8683 /* DNFMDBNote-Swift */,
+				707E6BBC216F1BE400DE8683 /* DNFMDBNote-SwiftTests */,
+				707E6BC7216F1BE400DE8683 /* DNFMDBNote-SwiftUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		707E6BA8216F1BE200DE8683 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707E6BB7216F1BE300DE8683 /* LaunchScreen.storyboard in Resources */,
+				707E6BB4216F1BE300DE8683 /* Assets.xcassets in Resources */,
+				707E6BB2216F1BE300DE8683 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707E6BBB216F1BE400DE8683 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707E6BC6216F1BE400DE8683 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70F146C120F842FB00C18212 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,22 +766,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AB4D7A7D70DCCB0782043571 /* [CP] Copy Pods Resources */ = {
+		03DA4B0198E70CC5D7DD7090 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote-Swift/Pods-DNFMDBNote-Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote-Swift/Pods-DNFMDBNote-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A737E290DE7AA8427F1AA41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B930DB80550238576CEAE056 /* [CP] Check Pods Manifest.lock */ = {
@@ -639,9 +826,57 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BEA5D4EECB6D4FE9C6B2F8F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DNFMDBNote-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		707E6BA6216F1BE200DE8683 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70FF3AB1216F2EAC002B0F51 /* DNNoteAlertTool.swift in Sources */,
+				707E6BAF216F1BE300DE8683 /* ViewController.swift in Sources */,
+				70FF3AAF216F2925002B0F51 /* DNNoteConstant.swift in Sources */,
+				70FF3AA7216F20B5002B0F51 /* DNNoteCellSwift.swift in Sources */,
+				707E6BD9216F1C7100DE8683 /* DNDataManager.swift in Sources */,
+				707E6BAD216F1BE300DE8683 /* AppDelegate.swift in Sources */,
+				70FF3AAD216F2504002B0F51 /* DNNoteModelSwift.swift in Sources */,
+				70FF3AA9216F20DD002B0F51 /* DNEditorViewController.swift in Sources */,
+				70FF3AAB216F20E7002B0F51 /* DNDetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707E6BB9216F1BE400DE8683 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		707E6BC4216F1BE400DE8683 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70F146BF20F842FB00C18212 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -679,7 +914,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F146E020F842FD00C18212 /* DNFMDBNoteTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,13 +921,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F146EB20F842FD00C18212 /* DNFMDBNoteUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		707E6BBF216F1BE400DE8683 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 707E6BA9216F1BE200DE8683 /* DNFMDBNote-Swift */;
+			targetProxy = 707E6BBE216F1BE400DE8683 /* PBXContainerItemProxy */;
+		};
+		707E6BCA216F1BE400DE8683 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 707E6BA9216F1BE200DE8683 /* DNFMDBNote-Swift */;
+			targetProxy = 707E6BC9216F1BE400DE8683 /* PBXContainerItemProxy */;
+		};
 		70F146DD20F842FD00C18212 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 70F146C220F842FB00C18212 /* DNFMDBNote */;
@@ -707,6 +950,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		707E6BB0216F1BE300DE8683 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				707E6BB1216F1BE300DE8683 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		707E6BB5216F1BE300DE8683 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				707E6BB6216F1BE300DE8683 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		7095B6E020F8737F008A1C3D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -726,6 +985,147 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		707E6BCF216F1BE400DE8683 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48263B3328ADBB8B10392552 /* Pods-DNFMDBNote-Swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "DNFMDBNote-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		707E6BD0216F1BE400DE8683 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8DEB56514B20E58446C8128 /* Pods-DNFMDBNote-Swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "DNFMDBNote-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		707E6BD1216F1BE400DE8683 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "DNFMDBNote-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNFMDBNote-Swift.app/DNFMDBNote-Swift";
+			};
+			name = Debug;
+		};
+		707E6BD2216F1BE400DE8683 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "DNFMDBNote-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNFMDBNote-Swift.app/DNFMDBNote-Swift";
+			};
+			name = Release;
+		};
+		707E6BD3216F1BE400DE8683 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "DNFMDBNote-SwiftUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DNFMDBNote-Swift";
+			};
+			name = Debug;
+		};
+		707E6BD4216F1BE400DE8683 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "DNFMDBNote-SwiftUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DNFMDBNote-Swift";
+			};
+			name = Release;
+		};
 		70F146ED20F842FD00C18212 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -949,6 +1349,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		707E6BD5216F1BE400DE8683 /* Build configuration list for PBXNativeTarget "DNFMDBNote-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707E6BCF216F1BE400DE8683 /* Debug */,
+				707E6BD0216F1BE400DE8683 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		707E6BD6216F1BE400DE8683 /* Build configuration list for PBXNativeTarget "DNFMDBNote-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707E6BD1216F1BE400DE8683 /* Debug */,
+				707E6BD2216F1BE400DE8683 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		707E6BD7216F1BE400DE8683 /* Build configuration list for PBXNativeTarget "DNFMDBNote-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707E6BD3216F1BE400DE8683 /* Debug */,
+				707E6BD4216F1BE400DE8683 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		70F146BE20F842FB00C18212 /* Build configuration list for PBXProject "DNFMDBNote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
