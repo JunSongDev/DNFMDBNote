@@ -8,7 +8,7 @@
 
 #import "DNBaseModel.h"
 
-@interface DNNoteModel : DNBaseModel
+@interface DNNoteModel : DNBaseModel<NSCoding>
 
 
 @property (nonatomic, assign) int modelID;

@@ -43,7 +43,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // 查询数据库数据
-    self.dataArr = [DNDBTools dn_selectAllData];
+    self.dataArr = [[DNFMDBTool defaultManager] dn_selectAllData];
     [self.tableView reloadData];
 }
 
@@ -197,7 +197,7 @@
         // 删除 tableView 上的数据 （表象）
         [self.dataArr removeObjectAtIndex:indexPath.section];
         // 删除数据库中的数据（实质）
-        [DNDBTools dn_deleteDate:model.modelID];
+        [[DNFMDBTool defaultManager] dn_deleteDateUid:model.user_id];
         // tableView 刷新数据
         [self.tableView reloadData];
     }];

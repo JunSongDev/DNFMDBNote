@@ -7,6 +7,7 @@
 //
 
 #import "DNEditorController.h"
+#import "DNNoteModel.h"
 
 @interface DNEditorController ()
 
@@ -89,7 +90,7 @@
                   model.timeDate = [self getCurrentTimeDate];
                   model.timeline = [self getCurrentTimeLine];
                   
-                  [DNDBTools dn_insertData:model];
+                  [[DNFMDBTool defaultManager] dn_insertData:model];
                   
                   [self.navigationController popViewControllerAnimated:YES];
     

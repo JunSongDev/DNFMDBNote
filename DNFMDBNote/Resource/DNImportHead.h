@@ -10,10 +10,12 @@
 #define DNImportHead_h
 
 #import "DNAlert.h"
-#import "DNDBTools.h"
+//#import "DNDBTools.h"
+#import "DNFMDBTool.h"
 #import <FMDB/FMDB.h>
 #import <Toast/Toast.h>
 #import <Masonry/Masonry.h>
+#import <JPush/JPUSHService.h>
 #import <MJRefresh/MJRefresh.h>
 
 #import "UIColor+Extension.h"

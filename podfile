@@ -7,8 +7,10 @@ target 'DNFMDBNote' do
     pod 'Masonry'
     pod 'Toast'
     pod 'FMDB'
+    pod 'JPush'
 end
 
 target 'DNFMDBNote-Swift' do
     pod 'FMDB'
+    pod 'JPush'
 end

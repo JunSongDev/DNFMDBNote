@@ -11,6 +11,8 @@
 #import "HomeController.h"
 #import "DNDBTools.h"
 #import "DNNoteModel.h"
+#import "AppDelegate+JPush.h"
+#import "DNFMDBTool.h"
 
 @interface AppDelegate ()
 
@@ -24,13 +26,18 @@
     
     [self initWindowManager];
     
-    [DNDBTools dn_createDatabase];
+//    [DNDBTools dn_createDatabase];
+    [[DNFMDBTool defaultManager] dn_createTable:@"noteTable"];
+    
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+//    [self registerJPushWithOptions:launchOptions];
     
     return YES;
 }
 
-- (void)initWindowManager
-{
+- (void)initWindowManager {
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     HomeController * vc = [[HomeController alloc] init];
