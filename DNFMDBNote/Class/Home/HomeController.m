@@ -16,9 +16,9 @@
 
 @interface HomeController ()
 
-@property (nonatomic, strong) UIButton * insertButton;
-@property (nonatomic, strong) NSMutableArray * dataArr;
-@property (nonatomic, strong) NSMutableArray * topArray;
+@property (nonatomic, strong) UIButton *insertButton;
+@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSMutableArray *selectArr;
 @end
 
 @implementation HomeController
@@ -72,8 +72,7 @@
 }
 
 #pragma mark -- SetControlForSuper
-- (void)setControlForSuper
-{
+- (void)setControlForSuper {
     DNWeak(self);
     self.insertButton = [[UIButton alloc]init];
     [self.insertButton setBackgroundColor:UIColor.orangeColor];
@@ -87,6 +86,7 @@
     }];
     
     self.tableView.backgroundColor = UIColor.clearColor;
+    self.tableView.allowsMultipleSelectionDuringEditing = YES; // 允许多选
     [self.tableView registerClass:[DNNoteCell class] forCellReuseIdentifier:@"DNNoteCell"];
     
     [self.view addSubview:self.tableView];
@@ -94,8 +94,8 @@
 }
 
 #pragma mark -- AddConstrainsForSuper
-- (void)addConstrainsForSuper
-{
+- (void)addConstrainsForSuper {
+    
     UIEdgeInsets edgs = UIEdgeInsetsMake(10, 10, 10, 10);
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -118,20 +118,51 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)leftItemClick {
+- (void)leftItemClick:(UIBarButtonItem *)item {
     
     DNLog(@"left");
+    
+    self.selectArr = [NSMutableArray array];
+    BOOL editing = !self.tableView.editing;
+    [self.tableView setEditing:editing animated:YES];
+    item.title = editing ? @"Complete":@"Edit";
+    if (editing) {
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(deleteClick)];
+    } else {
+        
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 //    DNPersonController * vc = [[DNPersonController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark -- Private Methods
+- (void)deleteClick {
+ 
+    [self.selectArr enumerateObjectsUsingBlock:^(id  _Nonnull obj,
+                                                 NSUInteger idx,
+                                                 BOOL * _Nonnull stop) {
+       
+                                                    NSIndexPath *indexPath = obj;
+        
+                                                    DNNoteModel * model = self.dataArr[indexPath.section];
+                                                    // 删除 tableView 上的数据 （表象）
+                                                    [self.dataArr removeObjectAtIndex:indexPath.section];
+                                                    // 删除数据库中的数据（实质）
+                                                    [[DNFMDBTool defaultManager] dn_deleteDateUid:model.user_id];
+                                                    // tableView 刷新数据
+                                                    [self.tableView reloadData];
+        
+    }];
+}
 
+#pragma mark -- Private Methods
 - (void)setNavigationBarItem {
     
-    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                               target:self
-                                                                               action:@selector(leftItemClick)];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(leftItemClick:)];
     self.navigationItem.leftBarButtonItem = leftItem;
 }
 
@@ -151,7 +182,6 @@
     
     DNNoteModel * model = self.dataArr[indexPath.section];
     DNNoteCell * cell = [tableView dequeueReusableCellWithIdentifier:@"DNNoteCell"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (!cell) {
         
         cell = [[DNNoteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DNNoteCell"];
@@ -162,10 +192,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    DNNoteModel * model = self.dataArr[indexPath.section];
-    DNDetailController * vc = [[DNDetailController alloc] init];
-    vc.model = model;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (tableView.isEditing) {
+        
+        if ([self.selectArr containsObject:indexPath]) {
+            
+            [self.selectArr removeObject:indexPath];
+        } else {
+            [self.selectArr addObject:indexPath];
+        }
+        
+    } else {
+        
+        DNNoteModel * model = self.dataArr[indexPath.section];
+        DNDetailController * vc = [[DNDetailController alloc] init];
+        vc.model = model;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -177,16 +219,17 @@
     
     return 10;
 }
+
 // tableView 是否为可编辑状态
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return YES;
 }
+
 /**
  *  自定义 tableViewCell 的左滑编辑按钮
  *  若滑动至最左边则执行第一个添加按钮的响应方法
  */
-
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewRowAction * rowAction1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
@@ -218,7 +261,7 @@
 }
 // tableView 编辑类型
 //- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
+//
 //    return UITableViewCellEditingStyleDelete;
 //}
 // tableView 进行删除是的操作
@@ -238,12 +281,4 @@
 #pragma mark -- NetWork Methods
 
 #pragma mark -- Setter && Getter
-
-- (NSMutableArray *)topArray {
-    if (!_topArray) {
-        _topArray = [NSMutableArray array];
-    }
-    return _topArray;
-}
-
 @end

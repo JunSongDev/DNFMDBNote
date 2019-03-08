@@ -31,7 +31,7 @@
     
 //    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
-//    [self registerJPushWithOptions:launchOptions];
+    [self registerJPushWithOptions:launchOptions];
     
     return YES;
 }
