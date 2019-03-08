@@ -74,7 +74,7 @@
 
 - (void)updateData {
     
-    if (NULLString(self.textView.text)) {
+    if (DNULLString(self.textView.text)) {
         DNLog(@"内容不可以为空");
         return;
     }

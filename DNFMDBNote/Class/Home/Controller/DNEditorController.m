@@ -7,11 +7,16 @@
 //
 
 #import "DNEditorController.h"
+#import "DNPickerCollectionCell.h"
 #import "DNNoteModel.h"
+#import "UITextView+Extra.h"
 
-@interface DNEditorController ()
+@interface DNEditorController ()<UICollectionViewDelegate, UICollectionViewDataSource, MWPhotoBrowserDelegate>
 
 @property (nonatomic, strong) UITextView * textView;
+@property (nonatomic, strong) UICollectionView *collectionView;
+
+@property (nonatomic, strong) NSMutableArray *photoArr;
 @end
 
 @implementation DNEditorController
@@ -26,6 +31,9 @@
     [self setControlForSuper];
     [self addConstrainsForSuper];
     [self setNavigateRightItem];
+    
+    self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
+    self.photoArr = [NSMutableArray arrayWithObjects:@"", nil];
 }
 
 /**
@@ -55,25 +63,38 @@
 }
 
 #pragma mark -- SetControlForSuper
-- (void)setControlForSuper
-{    
-    self.textView = [[UITextView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+- (void)setControlForSuper {
+    
+    self.textView = [[UITextView alloc]init];
     self.textView.font = systemFont(15);
+    self.textView.dn_placeholder = @"请输入将要存储的内容";
+    self.textView.dn_maxLength = 20;
     
     [self.view addSubview:self.textView];
+    [self.view addSubview:self.collectionView];
 }
 
 #pragma mark -- AddConstrainsForSuper
-- (void)addConstrainsForSuper
-{
+- (void)addConstrainsForSuper {
     
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.leading.trailing.bottom.mas_equalTo(self.view);
+        make.height.mas_offset(SCREEN_W);
+    }];
+    
+    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.leading.trailing.top.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.collectionView.mas_top).mas_offset(-5);
+    }];
 }
 
 #pragma mark -- Target Methods
 
 - (void)insertData {
     
-    if (NULLString(self.textView.text)) {
+    if (DNULLString(self.textView.text)) {
         
         DNLog(@"内容不能为空");
         //[DNAlert alertWithMessage:@"内容不能为空" superClass:self];
@@ -145,30 +166,98 @@
 }
 
 #pragma mark -- UITableView Delegate && DataSource
-
 /**
+ 
+ - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+ return <#section#>;
+ }
+ 
+ - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+ return <#row#>;
+ }
+ 
+ - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+ return <# UITableViewCell #>;
+ }
+ 
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ return <#height#>;
+ }
+ */
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-return <#section#>;
+#pragma mark -- UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    NSString *str = self.photoArr[indexPath.row];
+    if (DNULLString(str)) {
+        
+        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+        
+        browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+        browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+        browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+        browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+        browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+        browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+        browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+        browser.autoPlayOnAppear = NO; // Auto-play first video
+        
+        // Customise selection images to change colours if required
+//        browser.customImageSelectedIconName = @"ImageSelected.png";
+//        browser.customImageSelectedSmallIconName = @"ImageSelectedSmall.png";
+        
+        // Optionally set the current visible photo before displaying
+        [browser setCurrentPhotoIndex:1];
+        
+        // Present
+        [self.navigationController pushViewController:browser animated:YES];
+    } else {
+     
+    }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-return <#row#>;
+#pragma mark -- UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+ 
+    return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-return <# UITableViewCell #>;
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+ 
+    return self.photoArr.count >= 9 ? 9 : self.photoArr.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-return <#height#>;
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DNPickerCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DNPickerCollectionCell" forIndexPath:indexPath];
+    
+    cell.imageName = self.photoArr[indexPath.row];
+    return cell;
 }
-*/
 
 #pragma mark -- Other Delegate
 
 #pragma mark -- NetWork Methods
 
 #pragma mark -- Setter && Getter
-
+- (UICollectionView *)collectionView {
+ 
+    if (!_collectionView) {
+        
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.itemSize = CGSizeMake(SCREEN_W/3-2, SCREEN_W/3-2);
+        flowLayout.minimumLineSpacing      = 6.f;
+        flowLayout.minimumInteritemSpacing = 6.f;
+        
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
+                                             collectionViewLayout:flowLayout];
+        _collectionView.backgroundColor = UIColor.groupTableViewBackgroundColor;
+        
+        _collectionView.delegate   = self;
+        _collectionView.dataSource = self;
+        
+        [_collectionView registerClass:[DNPickerCollectionCell class] forCellWithReuseIdentifier:@"DNPickerCollectionCell"];
+    }
+    return _collectionView;
+}
 @end

@@ -3,6 +3,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'DNFMDBNote' do
+    pod 'MWPhotoBrowser'
     pod 'MJRefresh'
     pod 'Masonry'
     pod 'Toast'

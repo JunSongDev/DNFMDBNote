@@ -87,7 +87,7 @@
 #define HOME_INDICATOR_HEIGHT (iPhoneX ? 34.f : 0.f)
 
 // 空字符串
-#define NULLString(string) ((![string isKindOfClass:[NSString class]])||[string isEqualToString:@""] || (string == nil) || [string isKindOfClass:[NSNull class]]||[[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0 || [string isEqual:@"NULL"] ||  [string isEqual:NULL]||[[string class] isSubclassOfClass:[NSNull class]] || string == NULL || [string isEqualToString:@"<null>"] || [string isEqualToString:@"(null)"])
+#define DNULLString(string) ((![string isKindOfClass:[NSString class]])||[string isEqualToString:@""] || (string == nil) || [string isKindOfClass:[NSNull class]]||[[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0 || [string isEqual:@"NULL"] ||  [string isEqual:NULL]||[[string class] isSubclassOfClass:[NSNull class]] || string == NULL || [string isEqualToString:@"<null>"] || [string isEqualToString:@"(null)"])
 
 // 空数组
 #define NUllArr(array) (array.count <= 0 || [array isKindOfClass:[NSNull class]] || array == nil)

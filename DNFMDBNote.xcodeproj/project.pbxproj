@@ -20,6 +20,8 @@
 		707E6BB4216F1BE300DE8683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 707E6BB3216F1BE300DE8683 /* Assets.xcassets */; };
 		707E6BB7216F1BE300DE8683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707E6BB5216F1BE300DE8683 /* LaunchScreen.storyboard */; };
 		707E6BD9216F1C7100DE8683 /* DNDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BD8216F1C7100DE8683 /* DNDataManager.swift */; };
+		708C8A3622325EAF008A5E6D /* DNPickerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 708C8A3522325EAF008A5E6D /* DNPickerCollectionCell.m */; };
+		708C8A39223269AB008A5E6D /* UITextView+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 708C8A38223269AB008A5E6D /* UITextView+Extra.m */; };
 		7095B6FE20F8737F008A1C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6DE20F8737F008A1C3D /* Assets.xcassets */; };
 		7095B6FF20F8737F008A1C3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6DF20F8737F008A1C3D /* ViewController.m */; };
 		7095B70020F8737F008A1C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6E020F8737F008A1C3D /* LaunchScreen.storyboard */; };
@@ -114,6 +116,10 @@
 		707E6BBD216F1BE400DE8683 /* DNFMDBNote-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNFMDBNote-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		707E6BC8216F1BE400DE8683 /* DNFMDBNote-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNFMDBNote-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		707E6BD8216F1C7100DE8683 /* DNDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNDataManager.swift; sourceTree = "<group>"; };
+		708C8A3422325EAF008A5E6D /* DNPickerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPickerCollectionCell.h; sourceTree = "<group>"; };
+		708C8A3522325EAF008A5E6D /* DNPickerCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPickerCollectionCell.m; sourceTree = "<group>"; };
+		708C8A37223269AB008A5E6D /* UITextView+Extra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extra.h"; sourceTree = "<group>"; };
+		708C8A38223269AB008A5E6D /* UITextView+Extra.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extra.m"; sourceTree = "<group>"; };
 		7095B6DE20F8737F008A1C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7095B6DF20F8737F008A1C3D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7095B6E120F8737F008A1C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -346,6 +352,8 @@
 			children = (
 				7095B74F20F885BE008A1C3D /* DNNoteCell.h */,
 				7095B75020F885BE008A1C3D /* DNNoteCell.m */,
+				708C8A3422325EAF008A5E6D /* DNPickerCollectionCell.h */,
+				708C8A3522325EAF008A5E6D /* DNPickerCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,6 +516,8 @@
 				7095B73820F875F4008A1C3D /* UIButton+Extension.m */,
 				7095B73920F875F4008A1C3D /* UIScrollView+DNRefresh.h */,
 				7095B73220F875F4008A1C3D /* UIScrollView+DNRefresh.m */,
+				708C8A37223269AB008A5E6D /* UITextView+Extra.h */,
+				708C8A38223269AB008A5E6D /* UITextView+Extra.m */,
 			);
 			path = "UIKit (Category)";
 			sourceTree = "<group>";
@@ -813,16 +823,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DNFMDBNote/Pods-DNFMDBNote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MWPhotoBrowser/MWPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -916,7 +934,9 @@
 				7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */,
 				7095B75720F88C86008A1C3D /* DNDetailController.m in Sources */,
 				7095B75420F88C7B008A1C3D /* DNEditorController.m in Sources */,
+				708C8A3622325EAF008A5E6D /* DNPickerCollectionCell.m in Sources */,
 				7095B71620F873CE008A1C3D /* DNBaseViewController.m in Sources */,
+				708C8A39223269AB008A5E6D /* UITextView+Extra.m in Sources */,
 				7095B74220F875F4008A1C3D /* UIButton+Extension.m in Sources */,
 				7095B74E20F87D84008A1C3D /* DNNoteModel.m in Sources */,
 				7095B71920F873E3008A1C3D /* DNNavigationController.m in Sources */,
