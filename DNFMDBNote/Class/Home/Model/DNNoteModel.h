@@ -15,5 +15,4 @@
 @property (nonatomic, copy) NSString * content;
 @property (nonatomic, copy) NSString * dayDate;
 @property (nonatomic, copy) NSString * timeDate;
-@property (nonatomic, copy) NSString * timeline;
 @end

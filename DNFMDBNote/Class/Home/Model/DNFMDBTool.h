@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 更新数据 */
 - (NSMutableArray *)dn_selectAllData;
 
-/** 更新数据 */
+/** 删除数据 */
 - (void)dropTable;
 
 @end

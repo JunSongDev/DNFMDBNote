@@ -15,7 +15,6 @@
     [aCoder encodeInt:self.user_id forKey:@"user_id"];
     [aCoder encodeObject:self.content forKey:@"content"];
     [aCoder encodeObject:self.timeDate forKey:@"timeDate"];
-    [aCoder encodeObject:self.timeline forKey:@"timeline"];
     [aCoder encodeObject:self.dayDate forKey:@"dayDate"];
 }
 
@@ -28,7 +27,6 @@
         self.content = [aDecoder decodeObjectForKey:@"content"];
         self.dayDate = [aDecoder decodeObjectForKey:@"dayDate"];
         self.timeDate = [aDecoder decodeObjectForKey:@"timeDate"];
-        self.timeline = [aDecoder decodeObjectForKey:@"timeline"];
     }
     return self;
 }

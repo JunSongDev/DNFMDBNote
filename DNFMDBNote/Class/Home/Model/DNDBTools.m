@@ -34,7 +34,7 @@ static Class *_class;
     
     [self dn_openDatabase];
     
-    NSString * sql = @"create table if not exists note(id integer primary key autoincrement,content text,dayDate text,timeDate text,timeline text)";
+    NSString * sql = @"create table if not exists note(id integer primary key autoincrement,content text,dayDate text,timeDate text)";
     
     BOOL result = [_db executeUpdate:sql];
     
@@ -52,7 +52,7 @@ static Class *_class;
 + (void)dn_insertData:(DNNoteModel *)data {
     
     [self dn_openDatabase];
-    NSString * sql = @"insert into note(content,dayDate,timeDate,timeline) values(?,?,?,?)";
+    NSString * sql = @"insert into note(content,dayDate,timeDate) values(?,?,?)";
     BOOL result = [_db executeUpdate:sql,data.content,data.dayDate,data.timeDate];
     
     if (result) {
@@ -77,9 +77,9 @@ static Class *_class;
     
     [self dn_openDatabase];
     
-    NSString * sql = @"update note set content = ?,dayDate = ?,timeDate = ?,timeline = ? where id = ?";
+    NSString * sql = @"update note set content = ?,dayDate = ?,timeDate = ? where id = ?";
     
-    BOOL result = [_db executeUpdate:sql,data.content,data.dayDate,data.timeDate,data.timeline,@(data.modelID)];
+    BOOL result = [_db executeUpdate:sql,data.content,data.dayDate,data.timeDate,@(data.modelID)];
     
     if (result) {
         
@@ -102,14 +102,12 @@ static Class *_class;
         NSString *content  = [result stringForColumn:@"content"];
         NSString *dayDate  = [result stringForColumn:@"dayDate"];
         NSString *timeDate = [result stringForColumn:@"timeDate"];
-        NSString *timeline = [result stringForColumn:@"timeline"];
         
         DNNoteModel * model = [[DNNoteModel alloc] init];
         model.modelID = modelID;
         model.content = content;
         model.dayDate = dayDate;
         model.timeDate = timeDate;
-        model.timeline = timeline;
         
         [array addObject:model];
     }

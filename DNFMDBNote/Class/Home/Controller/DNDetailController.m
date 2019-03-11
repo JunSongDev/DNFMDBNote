@@ -85,11 +85,10 @@
     
                   DNNoteModel * model = [[DNNoteModel alloc] init];
                   model.user_id  = self.model.user_id;
-                  model.modelID  = self.model.modelID;
+//                  model.modelID  = self.model.modelID;
                   model.content  = self.textView.text;
                   model.dayDate  = [self getCurrentDayDate];
                   model.timeDate = [self getCurrentTimeDate];
-                  model.timeline = [self getCurrentTimeLine];
                   
                   [[DNFMDBTool defaultManager] dn_updateData:model uid:model.user_id];
                   

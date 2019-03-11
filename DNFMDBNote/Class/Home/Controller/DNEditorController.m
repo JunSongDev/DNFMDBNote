@@ -75,16 +75,16 @@
 #pragma mark -- AddConstrainsForSuper
 - (void)addConstrainsForSuper {
     
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.leading.trailing.bottom.mas_equalTo(self.view);
-        make.height.mas_offset(SCREEN_W);
-    }];
-    
+//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.leading.trailing.bottom.mas_equalTo(self.view);
+//        make.height.mas_offset(SCREEN_W);
+//    }];
+//
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.leading.trailing.top.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.collectionView.mas_top).mas_offset(-5);
+        make.edges.mas_equalTo(self.view);
+//        make.bottom.mas_equalTo(self.collectionView.mas_top).mas_offset(-5);
     }];
 }
 
@@ -107,7 +107,6 @@
                   model.content  = self.textView.text;
                   model.dayDate  = [self getCurrentDayDate];
                   model.timeDate = [self getCurrentTimeDate];
-                  model.timeline = [self getCurrentTimeLine];
                   
                   [[DNFMDBTool defaultManager] dn_insertData:model];
                   

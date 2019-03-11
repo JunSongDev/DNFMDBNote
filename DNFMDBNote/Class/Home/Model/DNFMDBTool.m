@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 
 @interface DNFMDBTool ()
-
+// 用来存储数据库表的名称
 @property (nonatomic, copy) NSString *tableName;
 @end
 
@@ -43,7 +43,7 @@ static DNFMDBTool *_manager = nil;
 }
 
 - (FMDatabase *)dn_openDatabase {
-    // /Users/zjs/Library/Developer/CoreSimulator/Devices/47652CCB-4399-43C6-8D33-8C30E0EAC602/data/Containers/Data/Application/6FD1BDD0-A38B-4059-9EF5-630572A745B6/Documents
+    
     NSString * path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString * dbPath = [path stringByAppendingPathComponent:@"DNFMDBTools.sqlite"];
     
@@ -62,7 +62,7 @@ static DNFMDBTool *_manager = nil;
     
     [self dn_openDatabase];
     
-    NSString *sql = [NSString stringWithFormat:@"create table if not exists %@(id integer primary key autoincrement, model BOLB)", self.tableName];
+    NSString *sql = [NSString stringWithFormat:@"create table if not exists %@(id integer primary key autoincrement, model BLOB)", self.tableName];
     BOOL result = [_db executeUpdate:sql];
     
     if (result) {
