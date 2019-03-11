@@ -42,21 +42,25 @@ static char *placeholderColorKey = "placeholderColorKey";
 }
 
 - (void)dn_layoutSubviews {
+    //边距
+    CGFloat  lineFragmentPadding = self.textContainer.lineFragmentPadding;
+    UIEdgeInsets contentInset    = self.textContainerInset;
     
     if (self.dn_placeholder) {
+        // 设置label frame
+        CGFloat labelX = lineFragmentPadding + contentInset.left;
+        CGFloat labelY = contentInset.top;
         
-        self.dn_placeholderLabel.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.dn_placeholderLabel.topAnchor      constraintEqualToAnchor:self.topAnchor constant:5].active = YES;
-        [self.dn_placeholderLabel.leadingAnchor  constraintEqualToAnchor:self.leadingAnchor constant:5].active = YES;
-        [self.dn_placeholderLabel.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-5].active = YES;
+        CGFloat labelW = CGRectGetWidth(self.bounds)  - contentInset.left - labelX;
+        CGFloat labelH = [self.dn_placeholderLabel sizeThatFits:CGSizeMake(labelW, MAXFLOAT)].height;
+        self.dn_placeholderLabel.frame = CGRectMake(labelX, labelY, labelW, labelH);
     }
     
 //    if (self.dn_maxLengthLabel) {
-//
-//        [self.dn_maxLengthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//            make.bottom.trailing.mas_equalTo(self).inset(5);
-//        }];
+        // 设置label frame
+//        self.dn_maxLengthLabel.translatesAutoresizingMaskIntoConstraints = NO;
+//        [self.dn_maxLengthLabel.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:-5].active = YES;
+//        [self.dn_maxLengthLabel.rightAnchor constraintEqualToAnchor:self.rightAnchor constant:-5].active = YES;
 //    }
     [self dn_layoutSubviews];
 }
@@ -72,12 +76,6 @@ static char *placeholderColorKey = "placeholderColorKey";
 #pragma mark - update
 - (void)updatePlaceHolder {
     
-    if (self.text.length > self.dn_maxLength) {
-        
-        self.text = [self.text substringWithRange:NSMakeRange(0, self.dn_maxLength)];
-//        self.dn_maxLengthLabel.text = [NSString stringWithFormat:@"%ld/%ld", self.text.length, self.dn_maxLength];
-    }
-    
     if (self.text.length) {
         [self.dn_placeholderLabel removeFromSuperview];
         return;
@@ -86,8 +84,20 @@ static char *placeholderColorKey = "placeholderColorKey";
     self.dn_placeholderLabel.text = self.dn_placeholder;
     self.dn_placeholderLabel.textColor = self.dn_placeholderColor ? :[UIColor colorWithWhite:0.8 alpha:1.0];
     [self insertSubview:self.dn_placeholderLabel atIndex:0];
+    
+//    self.dn_maxLengthLabel.font = [UIFont systemFontOfSize:14];
+//    self.dn_maxLengthLabel.textColor = [UIColor colorWithWhite:0.8 alpha:1.0];
 //    [self insertSubview:self.dn_maxLengthLabel atIndex:0];
 }
+
+//- (void)dn_setMaxLengthText {
+//
+//    if (self.text.length > self.dn_maxLength) {
+//
+//        self.text = [self.text substringWithRange:NSMakeRange(0, self.dn_maxLength)];
+//    }
+//    self.dn_maxLengthLabel.text = [NSString stringWithFormat:@"%ld/%ld", self.text.length, self.dn_maxLength];
+//}
 
 #pragma mark - lazzing
 - (UILabel *)dn_placeholderLabel {
@@ -115,15 +125,32 @@ static char *placeholderColorKey = "placeholderColorKey";
 //        placeHolderLab.font      = [UIFont systemFontOfSize:14];
 //        placeHolderLab.textColor = [UIColor colorWithWhite:0.8 alpha:1.0];
 //
-//
 //        objc_setAssociatedObject(self, @selector(dn_maxLengthLabel), placeHolderLab, OBJC_ASSOCIATION_RETAIN);
 //
 //        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(updatePlaceHolder)
+//                                                 selector:@selector(dn_setMaxLengthText)
 //                                                     name:UITextViewTextDidChangeNotification
 //                                                   object:self];
 //    }
 //    return placeHolderLab;
+//}
+
+#pragma mark -- 获取文本字体大小
+//- (CGSize)dn_getTextSize:(NSString *)content height:(CGFloat)height {
+//    NSMutableDictionary * attributeDict = [[NSMutableDictionary alloc]init];
+//
+//    attributeDict[NSFontAttributeName] = [UIFont systemFontOfSize:14];
+//
+//    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+//    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+//    attributeDict[NSParagraphStyleAttributeName] = paragraphStyle;
+//    // 计算文本的 rect
+//    CGRect rect = [content boundingRectWithSize:CGSizeMake(MAXFLOAT, height)
+//                                        options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+//                                     attributes:attributeDict
+//                                        context:nil];
+//
+//    return rect.size;
 //}
 
 #pragma mark -- 占位文字
@@ -156,6 +183,7 @@ static char *placeholderColorKey = "placeholderColorKey";
     NSNumber *number = [NSNumber numberWithInteger:dn_maxLength];
     objc_setAssociatedObject(self, textMaxLengthKey, number, OBJC_ASSOCIATION_ASSIGN);
     [self updatePlaceHolder];
+//    [self dn_setMaxLengthText];
 }
 
 - (NSInteger)dn_maxLength {

@@ -11,7 +11,7 @@
 #import "DNNoteModel.h"
 #import "UITextView+Extra.h"
 
-@interface DNEditorController ()<UICollectionViewDelegate, UICollectionViewDataSource, MWPhotoBrowserDelegate>
+@interface DNEditorController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UITextView * textView;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -22,7 +22,6 @@
 @implementation DNEditorController
 
 #pragma mark -- LifeCycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -56,7 +55,6 @@
 */
 
 #pragma mark -- DidReceiveMemoryWarning
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -188,32 +186,7 @@
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
  
-    NSString *str = self.photoArr[indexPath.row];
-    if (DNULLString(str)) {
-        
-        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-        
-        browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
-        browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
-        browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
-        browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
-        browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
-        browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
-        browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
-        browser.autoPlayOnAppear = NO; // Auto-play first video
-        
-        // Customise selection images to change colours if required
-//        browser.customImageSelectedIconName = @"ImageSelected.png";
-//        browser.customImageSelectedSmallIconName = @"ImageSelectedSmall.png";
-        
-        // Optionally set the current visible photo before displaying
-        [browser setCurrentPhotoIndex:1];
-        
-        // Present
-        [self.navigationController pushViewController:browser animated:YES];
-    } else {
-     
-    }
+    
 }
 
 #pragma mark -- UICollectionViewDataSource

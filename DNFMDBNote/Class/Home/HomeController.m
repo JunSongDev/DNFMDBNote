@@ -24,7 +24,6 @@
 @implementation HomeController
 
 #pragma mark -- LifeCycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -64,7 +63,6 @@
 
 
 #pragma mark -- DidReceiveMemoryWarning
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
@@ -111,7 +109,6 @@
 }
 
 #pragma mark -- Target Methods
-
 - (void)editorNoteRecord {
     
     DNEditorController * vc = [[DNEditorController alloc]init];
@@ -119,8 +116,6 @@
 }
 
 - (void)leftItemClick:(UIBarButtonItem *)item {
-    
-    DNLog(@"left");
     
     self.selectArr = [NSMutableArray array];
     BOOL editing = !self.tableView.editing;
@@ -133,8 +128,6 @@
         
         self.navigationItem.rightBarButtonItem = nil;
     }
-//    DNPersonController * vc = [[DNPersonController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)deleteClick {
@@ -142,16 +135,14 @@
     [self.selectArr enumerateObjectsUsingBlock:^(id  _Nonnull obj,
                                                  NSUInteger idx,
                                                  BOOL * _Nonnull stop) {
-       
-                                                    NSIndexPath *indexPath = obj;
-        
-                                                    DNNoteModel * model = self.dataArr[indexPath.section];
-                                                    // 删除 tableView 上的数据 （表象）
-                                                    [self.dataArr removeObjectAtIndex:indexPath.section];
-                                                    // 删除数据库中的数据（实质）
-                                                    [[DNFMDBTool defaultManager] dn_deleteDateUid:model.user_id];
-                                                    // tableView 刷新数据
-                                                    [self.tableView reloadData];
+        // 获取储存的 model 对象
+        DNNoteModel * model = obj;
+        // 删除 tableView 上的数据 （表象）
+        [self.dataArr removeObject:model];
+        // 删除数据库中的数据（实质）
+        [[DNFMDBTool defaultManager] dn_deleteDateUid:model.user_id];
+        // tableView 刷新数据
+        [self.tableView reloadData];
         
     }];
 }
@@ -167,7 +158,6 @@
 }
 
 #pragma mark -- UITableView Delegate && DataSource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return self.dataArr.count;
@@ -194,11 +184,13 @@
     
     if (tableView.isEditing) {
         
-        if ([self.selectArr containsObject:indexPath]) {
+        DNNoteModel * model = self.dataArr[indexPath.section];
+        
+        if ([self.selectArr containsObject:model]) {
             
-            [self.selectArr removeObject:indexPath];
+            [self.selectArr removeObject:model];
         } else {
-            [self.selectArr addObject:indexPath];
+            [self.selectArr addObject:model];
         }
         
     } else {
@@ -259,22 +251,6 @@
     
     return array;
 }
-// tableView 编辑类型
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    return UITableViewCellEditingStyleDelete;
-//}
-// tableView 进行删除是的操作
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    DNNoteModel * model = self.dataArr[indexPath.section];
-//    // 删除 tableView 上的数据 （表象）
-//    [self.dataArr removeObjectAtIndex:indexPath.section];
-//    // 删除数据库中的数据（实质）
-//    [DNDBTools dn_deleteDate:model.modelID];
-//    // tableView 刷新数据
-//    [self.tableView reloadData];
-//}
 
 #pragma mark -- Other Delegate
 
