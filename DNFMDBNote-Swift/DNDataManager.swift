@@ -33,7 +33,7 @@ class DNDataManager: NSObject {
         // 全局变量存储表明
         self.tableName = tableName
         
-        let createSql = "create table if not exists \(tableName) (id integer primary key autoincrement, model BOLB)"
+        let createSql = "create table if not exists \(tableName) (id integer primary key autoincrement, model BLOB)"
         
         let result = self.fmdb.executeUpdate(createSql, withArgumentsIn: [])
         
