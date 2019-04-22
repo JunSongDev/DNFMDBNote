@@ -131,6 +131,17 @@
 }
 
 - (void)deleteClick {
+    
+    if (self.selectArr.count <= 0) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"暂未选中删除的数据" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:1.5];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        return;
+    }
  
     [self.selectArr enumerateObjectsUsingBlock:^(id  _Nonnull obj,
                                                  NSUInteger idx,
@@ -155,6 +166,15 @@
                                                                  target:self
                                                                  action:@selector(leftItemClick:)];
     self.navigationItem.leftBarButtonItem = leftItem;
+}
+
+// 自动隐藏提示框
+- (void)dismissAlert:(UIAlertController *)alert {
+ 
+    if (alert) {
+        
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark -- UITableView Delegate && DataSource
@@ -199,6 +219,15 @@
         DNDetailController * vc = [[DNDetailController alloc] init];
         vc.model = model;
         [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DNNoteModel * model = self.dataArr[indexPath.section];
+    if ([self.selectArr containsObject:model]) {
+        
+        [self.selectArr removeObject:model];
     }
 }
 
