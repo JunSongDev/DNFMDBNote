@@ -99,14 +99,46 @@
               }];
 }
 
+- (void)choosePhoto {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark -- Private Methods
 
 - (void)setNavigateRightItem {
     
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                target:self
-                                                                                action:@selector(updateData)];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    UIImage *photosImg = [[UIImage imageNamed:@"photos"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *insertImg = [[UIImage imageNamed:@"insert"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIBarButtonItem * photosItem = [[UIBarButtonItem alloc] initWithImage:photosImg
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(choosePhoto)];
+    
+    
+    UIBarButtonItem * insertItem = [[UIBarButtonItem alloc] initWithImage:insertImg
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(updateData)];
+    
+    self.navigationItem.rightBarButtonItems = @[insertItem, photosItem];
 }
 
 - (NSString *)getCurrentDayDate {

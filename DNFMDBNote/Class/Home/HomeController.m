@@ -74,7 +74,7 @@
     DNWeak(self);
     self.insertButton = [[UIButton alloc]init];
     [self.insertButton setBackgroundColor:UIColor.orangeColor];
-    [self.insertButton setImage:IMAGE(@"insert") forState:UIControlStateNormal];
+    [self.insertButton setImage:IMAGE(@"insertData") forState:UIControlStateNormal];
     self.insertButton.layer.cornerRadius = SCREEN_W * 0.08;
     self.insertButton.layer.masksToBounds = YES;
     
@@ -134,7 +134,9 @@
     
     if (self.selectArr.count <= 0) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"暂未选中删除的数据" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示"
+                                                                       message:@"暂未选中删除的数据"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
         
         [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:1.5];
         
@@ -143,17 +145,18 @@
         return;
     }
  
+    DNWeak(self);
     [self.selectArr enumerateObjectsUsingBlock:^(id  _Nonnull obj,
                                                  NSUInteger idx,
                                                  BOOL * _Nonnull stop) {
         // 获取储存的 model 对象
         DNNoteModel * model = obj;
         // 删除 tableView 上的数据 （表象）
-        [self.dataArr removeObject:model];
+        [weakself.dataArr removeObject:model];
         // 删除数据库中的数据（实质）
         [[DNFMDBTool defaultManager] dn_deleteDateUid:model.user_id];
         // tableView 刷新数据
-        [self.tableView reloadData];
+        [weakself.tableView reloadData];
         
     }];
 }

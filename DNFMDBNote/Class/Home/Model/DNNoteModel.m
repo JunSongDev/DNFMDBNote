@@ -16,6 +16,8 @@
     [aCoder encodeObject:self.content forKey:@"content"];
     [aCoder encodeObject:self.timeDate forKey:@"timeDate"];
     [aCoder encodeObject:self.dayDate forKey:@"dayDate"];
+    [aCoder encodeObject:self.imageData forKey:@"imageData"];
+//    [aCoder encodeDataObject:self.imageData];
 }
 
 - (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
@@ -27,6 +29,8 @@
         self.content = [aDecoder decodeObjectForKey:@"content"];
         self.dayDate = [aDecoder decodeObjectForKey:@"dayDate"];
         self.timeDate = [aDecoder decodeObjectForKey:@"timeDate"];
+        self.imageData = [aDecoder decodeObjectForKey:@"imageData"];
+//        self.imageData = [aDecoder decodeDataObject];
     }
     return self;
 }

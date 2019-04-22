@@ -13,10 +13,14 @@
 
 @interface DNEditorController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, strong) UITextView * textView;
+@property (nonatomic, strong) UIButton    *photoBtn;
+@property (nonatomic, strong) UITextView  *textView;
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *photoArr;
+
+@property (nonatomic, strong) UIImagePickerController *imagePicker;
 @end
 
 @implementation DNEditorController
@@ -68,6 +72,8 @@
     self.textView.dn_placeholder = @"请输入将要存储的内容";
     self.textView.dn_maxLength = 20;
     
+    self.imageView = [[UIImageView alloc] init];
+    
     [self.view addSubview:self.textView];
     [self.view addSubview:self.collectionView];
 }
@@ -95,7 +101,7 @@
     if (DNULLString(self.textView.text)) {
         
         DNLog(@"内容不能为空");
-        //[DNAlert alertWithMessage:@"内容不能为空" superClass:self];
+        [DNAlert alertWithMessage:@"内容不能为空" superClass:self];
         return;
     }
     
@@ -117,14 +123,47 @@
               }];
 }
 
+- (void)choosePhoto {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark -- Private Methods
 // 设置导航栏右侧按钮
 - (void)setNavigateRightItem {
     
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                target:self
-                                                                                action:@selector(insertData)];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    //
+    UIImage *photosImg = [[UIImage imageNamed:@"photos"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *insertImg = [[UIImage imageNamed:@"insert"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIBarButtonItem * photosItem = [[UIBarButtonItem alloc] initWithImage:photosImg
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(choosePhoto)];
+    
+    
+    UIBarButtonItem * insertItem = [[UIBarButtonItem alloc] initWithImage:insertImg
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(insertData)];
+    
+    self.navigationItem.rightBarButtonItems = @[insertItem, photosItem];
 }
 
 // 获取当前的日期 年月日
@@ -231,5 +270,14 @@
         [_collectionView registerClass:[DNPickerCollectionCell class] forCellWithReuseIdentifier:@"DNPickerCollectionCell"];
     }
     return _collectionView;
+}
+
+- (UIImagePickerController *)imagePicker {
+ 
+    if (!_imagePicker) {
+        _imagePicker = [[UIImagePickerController alloc] init];
+        _imagePicker.delegate = self;
+    }
+    return _imagePicker;
 }
 @end
