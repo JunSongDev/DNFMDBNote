@@ -36,6 +36,10 @@
 
 - (void)setControlForSuper {
     
+    self.thumImage = [[UIImageView alloc] init];
+    self.thumImage.layer.cornerRadius  = 3.f;
+    self.thumImage.layer.masksToBounds = YES;
+    
     self.content  = [[UILabel alloc]init];
     self.content.font = systemFont(15);
     self.content.numberOfLines = 2;
@@ -48,6 +52,7 @@
     self.timeDate.font = systemFont(10);
     self.timeDate.textColor = UIColor.lightGrayColor;
     
+    [self.contentView addSubview:self.thumImage];
     [self.contentView addSubview:self.content];
     [self.contentView addSubview:self.dayDate];
     [self.contentView addSubview:self.timeDate];
@@ -55,9 +60,18 @@
 
 - (void)addConstraintsForSuper {
     
+    [self.thumImage mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(self.contentView.mas_left).inset(10);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.width.height.mas_offset(SCREEN_W * 0.1);
+    }];
+    
     [self.content mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.left.right.mas_equalTo(self.contentView).inset(SCREEN_W * 0.03);
+        make.bottom.mas_equalTo(self.contentView.mas_centerY);
+        make.left.mas_equalTo(self.thumImage.mas_right).mas_offset(10);
+        make.right.mas_equalTo(self.contentView.mas_right).inset(10);
     }];
     
     [self.dayDate mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,6 +92,7 @@
     
     _model = model;
     
+    self.thumImage.image = [UIImage imageWithData:model.imageData];
     self.content.text  = model.content;
     self.dayDate.text  = model.dayDate;
     self.timeDate.text = model.timeDate;

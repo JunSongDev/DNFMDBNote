@@ -15,5 +15,5 @@
 @property (nonatomic, copy) NSString * content;
 @property (nonatomic, copy) NSString * dayDate;
 @property (nonatomic, copy) NSString * timeDate;
-@property (nonatomic, assign) NSData * imageData;
+@property (nonatomic, strong) NSData * imageData;
 @end

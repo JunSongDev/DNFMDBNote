@@ -11,16 +11,12 @@
 #import "DNNoteModel.h"
 #import "UITextView+Extra.h"
 
-@interface DNEditorController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface DNEditorController ()<HXPhotoViewDelegate>
 
-@property (nonatomic, strong) UIButton    *photoBtn;
 @property (nonatomic, strong) UITextView  *textView;
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) HXPhotoView *photoView;
 
-@property (nonatomic, strong) NSMutableArray *photoArr;
-
-@property (nonatomic, strong) UIImagePickerController *imagePicker;
+@property (nonatomic, strong) NSData *imageData;
 @end
 
 @implementation DNEditorController
@@ -36,7 +32,6 @@
     [self setNavigateRightItem];
     
     self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
-    self.photoArr = [NSMutableArray arrayWithObjects:@"", nil];
 }
 
 /**
@@ -72,25 +67,37 @@
     self.textView.dn_placeholder = @"请输入将要存储的内容";
     self.textView.dn_maxLength = 20;
     
-    self.imageView = [[UIImageView alloc] init];
+    HXPhotoManager *manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
+    // 最多可选择数量
+    manager.configuration.photoMaxNum   = 1;
+    manager.configuration.albumShowMode = HXPhotoAlbumShowModePopup;
+    // 导航栏标题颜色
+    manager.configuration.navigationTitleColor = UIColor.whiteColor;
+    // 导航栏按钮颜色
+    manager.configuration.themeColor = UIColor.whiteColor;
     
-    [self.view addSubview:self.textView];
-    [self.view addSubview:self.collectionView];
+    manager.configuration.statusBarStyle = UIStatusBarStyleLightContent;
+    
+    self.photoView = [[HXPhotoView alloc] initWithManager:manager];
+    self.photoView.backgroundColor = UIColor.whiteColor;
+    self.photoView.delegate = self;
 }
 
 #pragma mark -- AddConstrainsForSuper
 - (void)addConstrainsForSuper {
     
-//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//        make.leading.trailing.bottom.mas_equalTo(self.view);
-//        make.height.mas_offset(SCREEN_W);
-//    }];
-//
+    [self.view addSubview:self.photoView];
+    [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.leading.bottom.trailing.mas_equalTo(self.view);
+        make.height.mas_offset(SCREEN_W);
+    }];
+    
+    [self.view addSubview:self.textView];
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.edges.mas_equalTo(self.view);
-//        make.bottom.mas_equalTo(self.collectionView.mas_top).mas_offset(-5);
+        make.top.leading.trailing.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.photoView.mas_top);
     }];
 }
 
@@ -109,61 +116,33 @@
                    superClass:self
               completeHandler:^{
         
-                  DNNoteModel * model = [[DNNoteModel alloc] init];
-                  model.content  = self.textView.text;
-                  model.dayDate  = [self getCurrentDayDate];
-                  model.timeDate = [self getCurrentTimeDate];
+        DNNoteModel * model = [[DNNoteModel alloc] init];
+        model.content   = self.textView.text;
+        model.imageData = self.imageData;
+        model.dayDate   = [self getCurrentDayDate];
+        model.timeDate  = [self getCurrentTimeDate];
                   
-                  [[DNFMDBTool defaultManager] dn_insertData:model];
+        [[DNFMDBTool defaultManager] dn_insertData:model];
                   
-                  [self.navigationController popViewControllerAnimated:YES];
-    
-              } cancleHandler:^{
+        [self.navigationController popViewControllerAnimated:YES];
+              
+    } cancleHandler:^{
         
-              }];
-}
-
-- (void)choosePhoto {
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    
-    [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 #pragma mark -- Private Methods
 // 设置导航栏右侧按钮
 - (void)setNavigateRightItem {
     
-    //
-    UIImage *photosImg = [[UIImage imageNamed:@"photos"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *insertImg = [[UIImage imageNamed:@"insert"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    UIBarButtonItem * photosItem = [[UIBarButtonItem alloc] initWithImage:photosImg
-                                                                    style:UIBarButtonItemStylePlain
-                                                                   target:self
-                                                                   action:@selector(choosePhoto)];
     
     
     UIBarButtonItem * insertItem = [[UIBarButtonItem alloc] initWithImage:insertImg
                                                                     style:UIBarButtonItemStylePlain
                                                                    target:self
                                                                    action:@selector(insertData)];
-    
-    self.navigationItem.rightBarButtonItems = @[insertItem, photosItem];
+    self.navigationItem.rightBarButtonItems = @[insertItem];
 }
 
 // 获取当前的日期 年月日
@@ -202,48 +181,17 @@
 }
 
 #pragma mark -- UITableView Delegate && DataSource
-/**
- 
- - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
- return <#section#>;
- }
- 
- - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
- return <#row#>;
- }
- 
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- return <# UITableViewCell #>;
- }
- 
- - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
- return <#height#>;
- }
- */
 
-#pragma mark -- UICollectionViewDelegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- 
+
+#pragma mark -- HXPhotoViewDelegate
+- (void)photoListViewControllerDidDone:(HXPhotoView *)photoView
+                               allList:(NSArray<HXPhotoModel *> *)allList
+                                photos:(NSArray<HXPhotoModel *> *)photos
+                                videos:(NSArray<HXPhotoModel *> *)videos
+                              original:(BOOL)isOriginal {
     
-}
-
-#pragma mark -- UICollectionViewDataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
- 
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
- 
-    return self.photoArr.count >= 9 ? 9 : self.photoArr.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    DNPickerCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DNPickerCollectionCell" forIndexPath:indexPath];
-    
-    cell.imageName = self.photoArr[indexPath.row];
-    return cell;
+    UIImage *image = photos[0].thumbPhoto;
+    self.imageData = UIImagePNGRepresentation(image);
 }
 
 #pragma mark -- Other Delegate
@@ -251,33 +199,5 @@
 #pragma mark -- NetWork Methods
 
 #pragma mark -- Setter && Getter
-- (UICollectionView *)collectionView {
- 
-    if (!_collectionView) {
-        
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.itemSize = CGSizeMake(SCREEN_W/3-2, SCREEN_W/3-2);
-        flowLayout.minimumLineSpacing      = 6.f;
-        flowLayout.minimumInteritemSpacing = 6.f;
-        
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
-                                             collectionViewLayout:flowLayout];
-        _collectionView.backgroundColor = UIColor.groupTableViewBackgroundColor;
-        
-        _collectionView.delegate   = self;
-        _collectionView.dataSource = self;
-        
-        [_collectionView registerClass:[DNPickerCollectionCell class] forCellWithReuseIdentifier:@"DNPickerCollectionCell"];
-    }
-    return _collectionView;
-}
 
-- (UIImagePickerController *)imagePicker {
- 
-    if (!_imagePicker) {
-        _imagePicker = [[UIImagePickerController alloc] init];
-        _imagePicker.delegate = self;
-    }
-    return _imagePicker;
-}
 @end

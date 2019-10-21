@@ -8,9 +8,12 @@
 
 #import "DNDetailController.h"
 
-@interface DNDetailController ()
+@interface DNDetailController ()<HXPhotoViewDelegate>
 
 @property (nonatomic, strong) UITextView * textView;
+@property (nonatomic, strong) HXPhotoView *photoView;
+
+@property (nonatomic, strong) NSData *imageData;
 @end
 
 @implementation DNDetailController
@@ -57,17 +60,45 @@
 #pragma mark -- SetControlForSuper
 - (void)setControlForSuper
 {    
-    self.textView = [[UITextView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.textView = [[UITextView alloc] init];
     self.textView.font = systemFont(15);
     self.textView.text = self.model.content;
     
+    HXPhotoManager *manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
+    // 最多可选择数量
+    manager.configuration.photoMaxNum   = 1;
+    manager.configuration.albumShowMode = HXPhotoAlbumShowModePopup;
+    // 导航栏标题颜色
+    manager.configuration.navigationTitleColor = UIColor.whiteColor;
+    // 导航栏按钮颜色
+    manager.configuration.themeColor = UIColor.whiteColor;
+    
+    manager.configuration.statusBarStyle = UIStatusBarStyleLightContent;
+    
+    self.photoView = [[HXPhotoView alloc] initWithManager:manager];
+    self.photoView.backgroundColor = UIColor.whiteColor;
+    self.photoView.delegate = self;
+    
+    [self.view addSubview:self.photoView];
     [self.view addSubview:self.textView];
 }
 
 #pragma mark -- AddConstrainsForSuper
-- (void)addConstrainsForSuper
-{
+- (void)addConstrainsForSuper {
     
+    [self.view addSubview:self.photoView];
+    [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.leading.bottom.trailing.mas_equalTo(self.view);
+        make.height.mas_offset(SCREEN_W);
+    }];
+    
+    [self.view addSubview:self.textView];
+    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.leading.trailing.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.photoView.mas_top);
+    }];
 }
 
 #pragma mark -- Target Methods
@@ -83,20 +114,20 @@
                    superClass:self
               completeHandler:^{
     
-                  DNNoteModel * model = [[DNNoteModel alloc] init];
-                  model.user_id  = self.model.user_id;
-//                  model.modelID  = self.model.modelID;
-                  model.content  = self.textView.text;
-                  model.dayDate  = [self getCurrentDayDate];
-                  model.timeDate = [self getCurrentTimeDate];
-                  
-                  [[DNFMDBTool defaultManager] dn_updateData:model uid:model.user_id];
-                  
-                  [self.navigationController popViewControllerAnimated:YES];
-    
-              } cancleHandler:^{
+        DNNoteModel * model = [[DNNoteModel alloc] init];
+        model.user_id   = self.model.user_id;
+        model.content   = self.textView.text;
+        model.imageData = self.imageData;
+        model.dayDate   = [self getCurrentDayDate];
+        model.timeDate  = [self getCurrentTimeDate];
         
-              }];
+        [[DNFMDBTool defaultManager] dn_updateData:model uid:model.user_id];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } cancleHandler:^{
+        
+    }];
 }
 
 - (void)choosePhoto {
@@ -124,21 +155,13 @@
 
 - (void)setNavigateRightItem {
     
-    UIImage *photosImg = [[UIImage imageNamed:@"photos"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *insertImg = [[UIImage imageNamed:@"insert"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    UIBarButtonItem * photosItem = [[UIBarButtonItem alloc] initWithImage:photosImg
-                                                                    style:UIBarButtonItemStylePlain
-                                                                   target:self
-                                                                   action:@selector(choosePhoto)];
-    
     
     UIBarButtonItem * insertItem = [[UIBarButtonItem alloc] initWithImage:insertImg
                                                                     style:UIBarButtonItemStylePlain
                                                                    target:self
                                                                    action:@selector(updateData)];
-    
-    self.navigationItem.rightBarButtonItems = @[insertItem, photosItem];
+    self.navigationItem.rightBarButtonItems = @[insertItem];
 }
 
 - (NSString *)getCurrentDayDate {
@@ -177,24 +200,17 @@
 
 #pragma mark -- UITableView Delegate && DataSource
 
-/**
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-return <#section#>;
+#pragma mark -- HXPhotoViewDelegate
+- (void)photoListViewControllerDidDone:(HXPhotoView *)photoView
+                               allList:(NSArray<HXPhotoModel *> *)allList
+                                photos:(NSArray<HXPhotoModel *> *)photos
+                                videos:(NSArray<HXPhotoModel *> *)videos
+                              original:(BOOL)isOriginal {
+    
+    UIImage *image = photos[0].thumbPhoto;
+    self.imageData = UIImagePNGRepresentation(image);
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-return <#row#>;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-return <# UITableViewCell #>;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-return <#height#>;
-}
-*/
 
 #pragma mark -- Other Delegate
 

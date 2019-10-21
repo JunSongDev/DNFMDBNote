@@ -17,7 +17,7 @@
 #import <Masonry/Masonry.h>
 #import <JPush/JPUSHService.h>
 #import <MJRefresh/MJRefresh.h>
-#import <MWPhotoBrowser/MWPhotoBrowser.h>
+#import <HXPhotoPicker/HXPhotoPicker.h>
 
 #import "UIColor+Extension.h"
 #import "UIImage+Extension.h"

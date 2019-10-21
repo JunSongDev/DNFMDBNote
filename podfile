@@ -3,7 +3,8 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'DNFMDBNote' do
-    pod 'MWPhotoBrowser'
+    # 图片选择
+    pod 'HXPhotoPicker'
     pod 'MJRefresh'
     pod 'Masonry'
     pod 'Toast'
