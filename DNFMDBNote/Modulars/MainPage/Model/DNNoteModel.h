@@ -12,8 +12,8 @@
 
 
 @property (nonatomic, assign) int modelID;
-@property (nonatomic, copy) NSString * content;
-@property (nonatomic, copy) NSString * dayDate;
-@property (nonatomic, copy) NSString * timeDate;
-@property (nonatomic, strong) NSData * imageData;
+@property (nonatomic,   copy) NSString * titleStr;
+@property (nonatomic,   copy) NSString * content;
+@property (nonatomic,   copy) NSString * dateStr;
+@property (nonatomic, strong) NSData   * imageData;
 @end

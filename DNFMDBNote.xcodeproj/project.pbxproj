@@ -10,6 +10,9 @@
 		20CDB6F280974489B1C46AFC /* Pods_DNFMDBNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D164BB8A19564932E1C5644 /* Pods_DNFMDBNote.framework */; };
 		701660FA218FF3F400B7211C /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 701660F9218FF3F400B7211C /* AppDelegate+JPush.m */; };
 		70454B742226217800604375 /* DNFMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 70454B732226217800604375 /* DNFMDBTool.m */; };
+		705DEF56248B803C009A8654 /* DNMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705DEF55248B803C009A8654 /* DNMainPageViewController.m */; };
+		705DEF59248B8119009A8654 /* DNMainPageNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 705DEF58248B8119009A8654 /* DNMainPageNoteCell.m */; };
+		705DEF5C248BA6D4009A8654 /* DNEditorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705DEF5B248BA6D4009A8654 /* DNEditorInfoViewController.m */; };
 		7078158320FC701600B3A30A /* DNAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158120FC701600B3A30A /* DNAlert.m */; };
 		7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158820FC83F500B3A30A /* UILabel+Extension.m */; };
 		707E6BAD216F1BE300DE8683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BAC216F1BE300DE8683 /* AppDelegate.swift */; };
@@ -39,12 +42,7 @@
 		7095B73F20F875F4008A1C3D /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73320F875F4008A1C3D /* UIImageView+Extension.m */; };
 		7095B74020F875F4008A1C3D /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73520F875F4008A1C3D /* UIColor+Extension.m */; };
 		7095B74220F875F4008A1C3D /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73820F875F4008A1C3D /* UIButton+Extension.m */; };
-		7095B74820F87972008A1C3D /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B74720F87972008A1C3D /* HomeController.m */; };
-		7095B74B20F87993008A1C3D /* DNDBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B74A20F87993008A1C3D /* DNDBTools.m */; };
 		7095B74E20F87D84008A1C3D /* DNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B74D20F87D84008A1C3D /* DNNoteModel.m */; };
-		7095B75120F885BE008A1C3D /* DNNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75020F885BE008A1C3D /* DNNoteCell.m */; };
-		7095B75420F88C7B008A1C3D /* DNEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75320F88C7B008A1C3D /* DNEditorController.m */; };
-		7095B75720F88C86008A1C3D /* DNDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B75620F88C86008A1C3D /* DNDetailController.m */; };
 		7095B75920F89795008A1C3D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7095B75820F89795008A1C3D /* libsqlite3.tbd */; };
 		70FF3AA7216F20B5002B0F51 /* DNNoteCellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AA6216F20B5002B0F51 /* DNNoteCellSwift.swift */; };
 		70FF3AA9216F20DD002B0F51 /* DNEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AA8216F20DD002B0F51 /* DNEditorViewController.swift */; };
@@ -94,6 +92,12 @@
 		701660F9218FF3F400B7211C /* AppDelegate+JPush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
 		70454B722226217800604375 /* DNFMDBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNFMDBTool.h; sourceTree = "<group>"; };
 		70454B732226217800604375 /* DNFMDBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFMDBTool.m; sourceTree = "<group>"; };
+		705DEF54248B803C009A8654 /* DNMainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNMainPageViewController.h; sourceTree = "<group>"; };
+		705DEF55248B803C009A8654 /* DNMainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNMainPageViewController.m; sourceTree = "<group>"; };
+		705DEF57248B8119009A8654 /* DNMainPageNoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNMainPageNoteCell.h; sourceTree = "<group>"; };
+		705DEF58248B8119009A8654 /* DNMainPageNoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNMainPageNoteCell.m; sourceTree = "<group>"; };
+		705DEF5A248BA6D4009A8654 /* DNEditorInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNEditorInfoViewController.h; sourceTree = "<group>"; };
+		705DEF5B248BA6D4009A8654 /* DNEditorInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNEditorInfoViewController.m; sourceTree = "<group>"; };
 		7078158120FC701600B3A30A /* DNAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlert.m; sourceTree = "<group>"; };
 		7078158220FC701600B3A30A /* DNAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlert.h; sourceTree = "<group>"; };
 		7078158720FC83F500B3A30A /* UILabel+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
@@ -151,18 +155,8 @@
 		7095B74320F8764D008A1C3D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7095B74420F87678008A1C3D /* DNDefineHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDefineHead.h; sourceTree = "<group>"; };
 		7095B74520F8791E008A1C3D /* DNImportHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNImportHead.h; sourceTree = "<group>"; };
-		7095B74620F87972008A1C3D /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
-		7095B74720F87972008A1C3D /* HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
-		7095B74920F87993008A1C3D /* DNDBTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDBTools.h; sourceTree = "<group>"; };
-		7095B74A20F87993008A1C3D /* DNDBTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDBTools.m; sourceTree = "<group>"; };
 		7095B74C20F87D84008A1C3D /* DNNoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNNoteModel.h; sourceTree = "<group>"; };
 		7095B74D20F87D84008A1C3D /* DNNoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNNoteModel.m; sourceTree = "<group>"; };
-		7095B74F20F885BE008A1C3D /* DNNoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNNoteCell.h; sourceTree = "<group>"; };
-		7095B75020F885BE008A1C3D /* DNNoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNNoteCell.m; sourceTree = "<group>"; };
-		7095B75220F88C7B008A1C3D /* DNEditorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNEditorController.h; sourceTree = "<group>"; };
-		7095B75320F88C7B008A1C3D /* DNEditorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNEditorController.m; sourceTree = "<group>"; };
-		7095B75520F88C86008A1C3D /* DNDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDetailController.h; sourceTree = "<group>"; };
-		7095B75620F88C86008A1C3D /* DNDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDetailController.m; sourceTree = "<group>"; };
 		7095B75820F89795008A1C3D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		70F146C320F842FB00C18212 /* DNFMDBNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNFMDBNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F146DB20F842FD00C18212 /* DNFMDBNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNFMDBNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +232,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		705DEF4F248B7FFE009A8654 /* Modulars */ = {
+			isa = PBXGroup;
+			children = (
+				705DEF50248B7FFE009A8654 /* MainPage */,
+			);
+			path = Modulars;
+			sourceTree = "<group>";
+		};
+		705DEF50248B7FFE009A8654 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				705DEF54248B803C009A8654 /* DNMainPageViewController.h */,
+				705DEF55248B803C009A8654 /* DNMainPageViewController.m */,
+				705DEF51248B7FFE009A8654 /* Controller */,
+				705DEF52248B7FFE009A8654 /* Model */,
+				705DEF53248B7FFE009A8654 /* View */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		705DEF51248B7FFE009A8654 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				705DEF5A248BA6D4009A8654 /* DNEditorInfoViewController.h */,
+				705DEF5B248BA6D4009A8654 /* DNEditorInfoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		705DEF52248B7FFE009A8654 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7095B74C20F87D84008A1C3D /* DNNoteModel.h */,
+				7095B74D20F87D84008A1C3D /* DNNoteModel.m */,
+				70454B722226217800604375 /* DNFMDBTool.h */,
+				70454B732226217800604375 /* DNFMDBTool.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		705DEF53248B7FFE009A8654 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				705DEF57248B8119009A8654 /* DNMainPageNoteCell.h */,
+				705DEF58248B8119009A8654 /* DNMainPageNoteCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		707E6BAB216F1BE300DE8683 /* DNFMDBNote-Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,68 +319,17 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		7095B6E720F8737F008A1C3D /* AppDelegate */ = {
+		7095B6E720F8737F008A1C3D /* Root */ = {
 			isa = PBXGroup;
 			children = (
 				7095B6E820F8737F008A1C3D /* AppDelegate.h */,
 				7095B6E920F8737F008A1C3D /* AppDelegate.m */,
 				701660F8218FF3F400B7211C /* AppDelegate+JPush.h */,
 				701660F9218FF3F400B7211C /* AppDelegate+JPush.m */,
+				7095B71A20F873FD008A1C3D /* DNTabBarController.h */,
+				7095B71B20F873FD008A1C3D /* DNTabBarController.m */,
 			);
-			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		7095B6EA20F8737F008A1C3D /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				7095B6EB20F8737F008A1C3D /* Home */,
-			);
-			path = Class;
-			sourceTree = "<group>";
-		};
-		7095B6EB20F8737F008A1C3D /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				7095B74620F87972008A1C3D /* HomeController.h */,
-				7095B74720F87972008A1C3D /* HomeController.m */,
-				7095B6EC20F8737F008A1C3D /* Controller */,
-				7095B6ED20F8737F008A1C3D /* Model */,
-				7095B6EE20F8737F008A1C3D /* View */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		7095B6EC20F8737F008A1C3D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				7095B75220F88C7B008A1C3D /* DNEditorController.h */,
-				7095B75320F88C7B008A1C3D /* DNEditorController.m */,
-				7095B75520F88C86008A1C3D /* DNDetailController.h */,
-				7095B75620F88C86008A1C3D /* DNDetailController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7095B6ED20F8737F008A1C3D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7095B74920F87993008A1C3D /* DNDBTools.h */,
-				7095B74A20F87993008A1C3D /* DNDBTools.m */,
-				7095B74C20F87D84008A1C3D /* DNNoteModel.h */,
-				7095B74D20F87D84008A1C3D /* DNNoteModel.m */,
-				70454B722226217800604375 /* DNFMDBTool.h */,
-				70454B732226217800604375 /* DNFMDBTool.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7095B6EE20F8737F008A1C3D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7095B74F20F885BE008A1C3D /* DNNoteCell.h */,
-				7095B75020F885BE008A1C3D /* DNNoteCell.m */,
-			);
-			path = View;
+			path = Root;
 			sourceTree = "<group>";
 		};
 		7095B6FB20F8737F008A1C3D /* DNTools */ = {
@@ -365,8 +357,6 @@
 				7095B71520F873CE008A1C3D /* DNBaseViewController.m */,
 				7095B71720F873E3008A1C3D /* DNNavigationController.h */,
 				7095B71820F873E3008A1C3D /* DNNavigationController.m */,
-				7095B71A20F873FD008A1C3D /* DNTabBarController.h */,
-				7095B71B20F873FD008A1C3D /* DNTabBarController.m */,
 				7095B71D20F8740B008A1C3D /* DNBaseView.h */,
 				7095B71E20F8740B008A1C3D /* DNBaseView.m */,
 				7095B72020F87421008A1C3D /* DNBaseCell.h */,
@@ -439,9 +429,9 @@
 			isa = PBXGroup;
 			children = (
 				701660F4218FE2E600B7211C /* DNFMDBNote.entitlements */,
-				7095B6E720F8737F008A1C3D /* AppDelegate */,
+				705DEF4F248B7FFE009A8654 /* Modulars */,
+				7095B6E720F8737F008A1C3D /* Root */,
 				7095B6FD20F8737F008A1C3D /* Base */,
-				7095B6EA20F8737F008A1C3D /* Class */,
 				7095B6FB20F8737F008A1C3D /* DNTools */,
 				7095B6FC20F8737F008A1C3D /* NetWork */,
 				7095B6DD20F8737F008A1C3D /* Resource */,
@@ -795,17 +785,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7095B73C20F875F4008A1C3D /* UIView+DNFrame.m in Sources */,
-				7095B74820F87972008A1C3D /* HomeController.m in Sources */,
 				7095B73E20F875F4008A1C3D /* UIScrollView+DNRefresh.m in Sources */,
 				70454B742226217800604375 /* DNFMDBTool.m in Sources */,
-				7095B75120F885BE008A1C3D /* DNNoteCell.m in Sources */,
 				7095B70220F8737F008A1C3D /* main.m in Sources */,
 				7095B74020F875F4008A1C3D /* UIColor+Extension.m in Sources */,
 				7095B71C20F873FD008A1C3D /* DNTabBarController.m in Sources */,
 				7095B73F20F875F4008A1C3D /* UIImageView+Extension.m in Sources */,
+				705DEF59248B8119009A8654 /* DNMainPageNoteCell.m in Sources */,
 				7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */,
-				7095B75720F88C86008A1C3D /* DNDetailController.m in Sources */,
-				7095B75420F88C7B008A1C3D /* DNEditorController.m in Sources */,
 				7095B71620F873CE008A1C3D /* DNBaseViewController.m in Sources */,
 				708C8A39223269AB008A5E6D /* UITextView+Extra.m in Sources */,
 				7095B74220F875F4008A1C3D /* UIButton+Extension.m in Sources */,
@@ -815,13 +802,14 @@
 				7095B73B20F875F4008A1C3D /* NSString+Extension.m in Sources */,
 				7095B72520F87438008A1C3D /* DNBaseModel.m in Sources */,
 				701660FA218FF3F400B7211C /* AppDelegate+JPush.m in Sources */,
+				705DEF56248B803C009A8654 /* DNMainPageViewController.m in Sources */,
 				7095B73D20F875F4008A1C3D /* UIImage+Extension.m in Sources */,
 				7095B73A20F875F4008A1C3D /* NSArray+Extension.m in Sources */,
+				705DEF5C248BA6D4009A8654 /* DNEditorInfoViewController.m in Sources */,
 				7095B70420F8737F008A1C3D /* AppDelegate.m in Sources */,
 				7095B71F20F8740B008A1C3D /* DNBaseView.m in Sources */,
 				7078158320FC701600B3A30A /* DNAlert.m in Sources */,
 				7095B6FF20F8737F008A1C3D /* ViewController.m in Sources */,
-				7095B74B20F87993008A1C3D /* DNDBTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

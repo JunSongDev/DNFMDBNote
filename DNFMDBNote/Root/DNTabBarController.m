@@ -8,7 +8,6 @@
 
 #import "DNTabBarController.h"
 #import "DNNavigationController.h"
-#import "HomeController.h"
 
 @interface DNTabBarController ()
 

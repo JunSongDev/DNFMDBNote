@@ -94,7 +94,7 @@
     // 设置标题 按钮
     NSMutableDictionary *textAttrs            = [NSMutableDictionary dictionary];
     textAttrs[NSForegroundColorAttributeName] = UIColor.whiteColor;
-    textAttrs[NSFontAttributeName]            = systemFont(20);
+    textAttrs[NSFontAttributeName]            = systemFont(17);
     [appearance setTitleTextAttributes:textAttrs];
     
     [appearance setBackgroundImage:[UIImage dn_imageWithColor:UIColor.orangeColor]

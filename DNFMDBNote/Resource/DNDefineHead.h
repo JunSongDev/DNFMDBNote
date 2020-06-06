@@ -51,6 +51,7 @@
 
 // 颜色
 #define RGB(r, g, b, a)     [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define UIColorMake(r,g,b)  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define tableViewColor      RGB(225, 225, 225, 0.6)
 // barTinColor
 #define barColor            RGB(28, 28, 28, 1.0)

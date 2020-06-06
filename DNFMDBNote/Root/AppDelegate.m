@@ -8,8 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DNNavigationController.h"
-#import "HomeController.h"
-#import "DNDBTools.h"
+#import "DNMainPageViewController.h"
 #import "DNNoteModel.h"
 #import "AppDelegate+JPush.h"
 #import "DNFMDBTool.h"
@@ -26,11 +25,8 @@
     
     [self initWindowManager];
     
-//    [DNDBTools dn_createDatabase];
     [[DNFMDBTool defaultManager] dn_createTable:@"noteTable"];
-    
-//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    
+        
     [self registerJPushWithOptions:launchOptions];
     
     return YES;
@@ -40,8 +36,8 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    HomeController * vc = [[HomeController alloc] init];
-    DNNavigationController * tabBar = [[DNNavigationController alloc]initWithRootViewController:vc];
+    DNMainPageViewController *vc     = [[DNMainPageViewController alloc] init];
+    DNNavigationController   *tabBar = [[DNNavigationController alloc] initWithRootViewController:vc];
     
     self.window.rootViewController = tabBar;
     

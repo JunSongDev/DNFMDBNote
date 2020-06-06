@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 更新数据 */
 - (void)dn_updateData:(id)data uid:(UInt32)uid;
 
-/** 更新数据 */
+/** 查询数据 */
 - (NSMutableArray *)dn_selectAllData;
 
 /** 删除数据 */

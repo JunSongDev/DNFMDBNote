@@ -12,10 +12,10 @@
 
 - (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
     
-    [aCoder encodeInt:self.user_id forKey:@"user_id"];
-    [aCoder encodeObject:self.content forKey:@"content"];
-    [aCoder encodeObject:self.timeDate forKey:@"timeDate"];
-    [aCoder encodeObject:self.dayDate forKey:@"dayDate"];
+    [aCoder encodeInt:self.user_id      forKey:@"user_id"];
+    [aCoder encodeObject:self.content   forKey:@"content"];
+    [aCoder encodeObject:self.titleStr  forKey:@"titleStr"];
+    [aCoder encodeObject:self.dateStr   forKey:@"dateStr"];
     [aCoder encodeObject:self.imageData forKey:@"imageData"];
 //    [aCoder encodeDataObject:self.imageData];
 }
@@ -25,10 +25,10 @@
     self = [super init];
     if (self) {
         
-        self.user_id = [aDecoder decodeIntForKey:@"user_id"];
-        self.content = [aDecoder decodeObjectForKey:@"content"];
-        self.dayDate = [aDecoder decodeObjectForKey:@"dayDate"];
-        self.timeDate = [aDecoder decodeObjectForKey:@"timeDate"];
+        self.user_id   = [aDecoder decodeIntForKey:@"user_id"];
+        self.content   = [aDecoder decodeObjectForKey:@"content"];
+        self.titleStr  = [aDecoder decodeObjectForKey:@"titleStr"];
+        self.dateStr   = [aDecoder decodeObjectForKey:@"dateStr"];
         self.imageData = [aDecoder decodeObjectForKey:@"imageData"];
 //        self.imageData = [aDecoder decodeDataObject];
     }
