@@ -3,16 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		20CDB6F280974489B1C46AFC /* Pods_DNFMDBNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D164BB8A19564932E1C5644 /* Pods_DNFMDBNote.framework */; };
-		701660F7218FEE8E00B7211C /* DNNoticeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701660F6218FEE8E00B7211C /* DNNoticeController.m */; };
 		701660FA218FF3F400B7211C /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 701660F9218FF3F400B7211C /* AppDelegate+JPush.m */; };
 		70454B742226217800604375 /* DNFMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 70454B732226217800604375 /* DNFMDBTool.m */; };
 		7078158320FC701600B3A30A /* DNAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158120FC701600B3A30A /* DNAlert.m */; };
-		7078158620FC7EF300B3A30A /* DNPersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158520FC7EF300B3A30A /* DNPersonController.m */; };
 		7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7078158820FC83F500B3A30A /* UILabel+Extension.m */; };
 		707E6BAD216F1BE300DE8683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BAC216F1BE300DE8683 /* AppDelegate.swift */; };
 		707E6BAF216F1BE300DE8683 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BAE216F1BE300DE8683 /* ViewController.swift */; };
@@ -20,7 +18,6 @@
 		707E6BB4216F1BE300DE8683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 707E6BB3216F1BE300DE8683 /* Assets.xcassets */; };
 		707E6BB7216F1BE300DE8683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707E6BB5216F1BE300DE8683 /* LaunchScreen.storyboard */; };
 		707E6BD9216F1C7100DE8683 /* DNDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E6BD8216F1C7100DE8683 /* DNDataManager.swift */; };
-		708C8A3622325EAF008A5E6D /* DNPickerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 708C8A3522325EAF008A5E6D /* DNPickerCollectionCell.m */; };
 		708C8A39223269AB008A5E6D /* UITextView+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 708C8A38223269AB008A5E6D /* UITextView+Extra.m */; };
 		7095B6FE20F8737F008A1C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7095B6DE20F8737F008A1C3D /* Assets.xcassets */; };
 		7095B6FF20F8737F008A1C3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B6DF20F8737F008A1C3D /* ViewController.m */; };
@@ -93,16 +90,12 @@
 		48263B3328ADBB8B10392552 /* Pods-DNFMDBNote-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNFMDBNote-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNFMDBNote-Swift/Pods-DNFMDBNote-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		5BCD37B0BBFA1E5FAD20AE23 /* Pods_DNFMDBNote_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNFMDBNote_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		701660F4218FE2E600B7211C /* DNFMDBNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DNFMDBNote.entitlements; sourceTree = "<group>"; };
-		701660F5218FEE8E00B7211C /* DNNoticeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNNoticeController.h; sourceTree = "<group>"; };
-		701660F6218FEE8E00B7211C /* DNNoticeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNNoticeController.m; sourceTree = "<group>"; };
 		701660F8218FF3F400B7211C /* AppDelegate+JPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
 		701660F9218FF3F400B7211C /* AppDelegate+JPush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
 		70454B722226217800604375 /* DNFMDBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNFMDBTool.h; sourceTree = "<group>"; };
 		70454B732226217800604375 /* DNFMDBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFMDBTool.m; sourceTree = "<group>"; };
 		7078158120FC701600B3A30A /* DNAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlert.m; sourceTree = "<group>"; };
 		7078158220FC701600B3A30A /* DNAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlert.h; sourceTree = "<group>"; };
-		7078158420FC7EF300B3A30A /* DNPersonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPersonController.h; sourceTree = "<group>"; };
-		7078158520FC7EF300B3A30A /* DNPersonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPersonController.m; sourceTree = "<group>"; };
 		7078158720FC83F500B3A30A /* UILabel+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		7078158820FC83F500B3A30A /* UILabel+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		7078158C20FC9F4F00B3A30A /* DNInstanceHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNInstanceHead.h; sourceTree = "<group>"; };
@@ -116,8 +109,6 @@
 		707E6BBD216F1BE400DE8683 /* DNFMDBNote-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNFMDBNote-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		707E6BC8216F1BE400DE8683 /* DNFMDBNote-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNFMDBNote-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		707E6BD8216F1C7100DE8683 /* DNDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNDataManager.swift; sourceTree = "<group>"; };
-		708C8A3422325EAF008A5E6D /* DNPickerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPickerCollectionCell.h; sourceTree = "<group>"; };
-		708C8A3522325EAF008A5E6D /* DNPickerCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPickerCollectionCell.m; sourceTree = "<group>"; };
 		708C8A37223269AB008A5E6D /* UITextView+Extra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extra.h"; sourceTree = "<group>"; };
 		708C8A38223269AB008A5E6D /* UITextView+Extra.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extra.m"; sourceTree = "<group>"; };
 		7095B6DE20F8737F008A1C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -300,9 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				7095B6EB20F8737F008A1C3D /* Home */,
-				7095B6EF20F8737F008A1C3D /* Third */,
-				7095B6F320F8737F008A1C3D /* Second */,
-				7095B6F720F8737F008A1C3D /* Fourth */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -326,10 +314,6 @@
 				7095B75320F88C7B008A1C3D /* DNEditorController.m */,
 				7095B75520F88C86008A1C3D /* DNDetailController.h */,
 				7095B75620F88C86008A1C3D /* DNDetailController.m */,
-				7078158420FC7EF300B3A30A /* DNPersonController.h */,
-				7078158520FC7EF300B3A30A /* DNPersonController.m */,
-				701660F5218FEE8E00B7211C /* DNNoticeController.h */,
-				701660F6218FEE8E00B7211C /* DNNoticeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,101 +336,6 @@
 			children = (
 				7095B74F20F885BE008A1C3D /* DNNoteCell.h */,
 				7095B75020F885BE008A1C3D /* DNNoteCell.m */,
-				708C8A3422325EAF008A5E6D /* DNPickerCollectionCell.h */,
-				708C8A3522325EAF008A5E6D /* DNPickerCollectionCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7095B6EF20F8737F008A1C3D /* Third */ = {
-			isa = PBXGroup;
-			children = (
-				7095B6F020F8737F008A1C3D /* Controller */,
-				7095B6F120F8737F008A1C3D /* Model */,
-				7095B6F220F8737F008A1C3D /* View */,
-			);
-			path = Third;
-			sourceTree = "<group>";
-		};
-		7095B6F020F8737F008A1C3D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7095B6F120F8737F008A1C3D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7095B6F220F8737F008A1C3D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7095B6F320F8737F008A1C3D /* Second */ = {
-			isa = PBXGroup;
-			children = (
-				7095B6F420F8737F008A1C3D /* Controller */,
-				7095B6F520F8737F008A1C3D /* Model */,
-				7095B6F620F8737F008A1C3D /* View */,
-			);
-			path = Second;
-			sourceTree = "<group>";
-		};
-		7095B6F420F8737F008A1C3D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7095B6F520F8737F008A1C3D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7095B6F620F8737F008A1C3D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7095B6F720F8737F008A1C3D /* Fourth */ = {
-			isa = PBXGroup;
-			children = (
-				7095B6F820F8737F008A1C3D /* Controller */,
-				7095B6F920F8737F008A1C3D /* Model */,
-				7095B6FA20F8737F008A1C3D /* View */,
-			);
-			path = Fourth;
-			sourceTree = "<group>";
-		};
-		7095B6F820F8737F008A1C3D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7095B6F920F8737F008A1C3D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7095B6FA20F8737F008A1C3D /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -910,7 +799,6 @@
 				7095B73E20F875F4008A1C3D /* UIScrollView+DNRefresh.m in Sources */,
 				70454B742226217800604375 /* DNFMDBTool.m in Sources */,
 				7095B75120F885BE008A1C3D /* DNNoteCell.m in Sources */,
-				701660F7218FEE8E00B7211C /* DNNoticeController.m in Sources */,
 				7095B70220F8737F008A1C3D /* main.m in Sources */,
 				7095B74020F875F4008A1C3D /* UIColor+Extension.m in Sources */,
 				7095B71C20F873FD008A1C3D /* DNTabBarController.m in Sources */,
@@ -918,7 +806,6 @@
 				7078158920FC83F500B3A30A /* UILabel+Extension.m in Sources */,
 				7095B75720F88C86008A1C3D /* DNDetailController.m in Sources */,
 				7095B75420F88C7B008A1C3D /* DNEditorController.m in Sources */,
-				708C8A3622325EAF008A5E6D /* DNPickerCollectionCell.m in Sources */,
 				7095B71620F873CE008A1C3D /* DNBaseViewController.m in Sources */,
 				708C8A39223269AB008A5E6D /* UITextView+Extra.m in Sources */,
 				7095B74220F875F4008A1C3D /* UIButton+Extension.m in Sources */,
@@ -934,7 +821,6 @@
 				7095B71F20F8740B008A1C3D /* DNBaseView.m in Sources */,
 				7078158320FC701600B3A30A /* DNAlert.m in Sources */,
 				7095B6FF20F8737F008A1C3D /* ViewController.m in Sources */,
-				7078158620FC7EF300B3A30A /* DNPersonController.m in Sources */,
 				7095B74B20F87993008A1C3D /* DNDBTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -67,7 +67,7 @@
     HXPhotoManager *manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
     // 最多可选择数量
     manager.configuration.photoMaxNum   = 1;
-    manager.configuration.albumShowMode = HXPhotoAlbumShowModePopup;
+    manager.configuration.albumShowMode = HXPhotoAlbumShowModeDefault;
     // 导航栏标题颜色
     manager.configuration.navigationTitleColor = UIColor.whiteColor;
     // 导航栏按钮颜色
@@ -75,12 +75,13 @@
     
     manager.configuration.statusBarStyle = UIStatusBarStyleLightContent;
     
-    self.photoView = [[HXPhotoView alloc] initWithManager:manager];
-    self.photoView.backgroundColor = UIColor.whiteColor;
-    self.photoView.delegate = self;
+    UIImage *image = [UIImage imageWithData:self.model.imageData];
+    HXCustomAssetModel *model = [HXCustomAssetModel assetWithLocalImage:image selected:YES];
+    [manager addCustomAssetModel:@[model]];
     
-    [self.view addSubview:self.photoView];
-    [self.view addSubview:self.textView];
+    self.photoView = [[HXPhotoView alloc] initWithManager:manager];
+    self.photoView.delegate  = self;
+    self.photoView.lineCount = 4;
 }
 
 #pragma mark -- AddConstrainsForSuper
@@ -128,27 +129,6 @@
     } cancleHandler:^{
         
     }];
-}
-
-- (void)choosePhoto {
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark -- Private Methods
@@ -208,8 +188,42 @@
                                 videos:(NSArray<HXPhotoModel *> *)videos
                               original:(BOOL)isOriginal {
     
-    UIImage *image = photos[0].thumbPhoto;
-    self.imageData = UIImagePNGRepresentation(image);
+    if (photos.count > 0) {
+        
+        if (photos[0].type == HXPhotoModelMediaTypePhotoGif) {
+            if (photos[0].asset) {
+                
+                NSArray *resourceList = [PHAssetResource assetResourcesForAsset:photos[0].asset];
+                [resourceList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                               
+                    PHAssetResource *resource = obj;
+                    PHAssetResourceRequestOptions *option = [[PHAssetResourceRequestOptions alloc]init];
+                    option.networkAccessAllowed = YES;
+                    // 首先,需要获取沙盒路径
+                    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+                    // 拼接图片名为resource.originalFilename的路径
+                    NSString *imageFilePath = [path stringByAppendingPathComponent:resource.originalFilename];
+                    
+                    if ([resource.uniformTypeIdentifier isEqualToString:@"com.compuserve.gif"]) {
+                                   
+                        [[PHAssetResourceManager defaultManager] writeDataForAssetResource:resource toFile:[NSURL fileURLWithPath:imageFilePath] options:option completionHandler:^(NSError * _Nullable error) {
+                            if (error) {
+                                if(error.code == -1){
+                                    //文件已存在
+                                    self.imageData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:imageFilePath]];
+                                }
+                            } else {
+                                self.imageData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:imageFilePath]];
+                            }
+                        }];
+                    }
+                }];
+            }
+        } else {
+            UIImage *image = photos[0].thumbPhoto;
+            self.imageData = UIImagePNGRepresentation(image);
+        }
+    }
 }
 
 #pragma mark -- Other Delegate

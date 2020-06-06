@@ -33,7 +33,7 @@
                                                                     message:message
                                                              preferredStyle:UIAlertControllerStyleAlert];
     
-    [superClass performSelector:@selector(alertSelctor:) withObject:alert afterDelay:1.5];
+    [alert performSelector:@selector(alertSelctor:) withObject:alert afterDelay:1.5];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         

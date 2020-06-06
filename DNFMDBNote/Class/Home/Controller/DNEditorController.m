@@ -7,9 +7,10 @@
 //
 
 #import "DNEditorController.h"
-#import "DNPickerCollectionCell.h"
 #import "DNNoteModel.h"
 #import "UITextView+Extra.h"
+
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface DNEditorController ()<HXPhotoViewDelegate>
 
@@ -70,7 +71,7 @@
     HXPhotoManager *manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
     // 最多可选择数量
     manager.configuration.photoMaxNum   = 1;
-    manager.configuration.albumShowMode = HXPhotoAlbumShowModePopup;
+    manager.configuration.albumShowMode = HXPhotoAlbumShowModeDefault;
     // 导航栏标题颜色
     manager.configuration.navigationTitleColor = UIColor.whiteColor;
     // 导航栏按钮颜色
@@ -79,8 +80,8 @@
     manager.configuration.statusBarStyle = UIStatusBarStyleLightContent;
     
     self.photoView = [[HXPhotoView alloc] initWithManager:manager];
-    self.photoView.backgroundColor = UIColor.whiteColor;
-    self.photoView.delegate = self;
+    self.photoView.delegate  = self;
+    self.photoView.lineCount = 4;
 }
 
 #pragma mark -- AddConstrainsForSuper
@@ -108,7 +109,9 @@
     if (DNULLString(self.textView.text)) {
         
         DNLog(@"内容不能为空");
-        [DNAlert alertWithMessage:@"内容不能为空" superClass:self];
+        [DNAlert alertWithMessage:@"内容不能为空" superClass:self completeHandler:^{
+            
+        }];
         return;
     }
     
@@ -190,8 +193,43 @@
                                 videos:(NSArray<HXPhotoModel *> *)videos
                               original:(BOOL)isOriginal {
     
-    UIImage *image = photos[0].thumbPhoto;
-    self.imageData = UIImagePNGRepresentation(image);
+    if (photos.count > 0) {
+        if (photos[0].type == HXPhotoModelMediaTypePhotoGif) {
+            
+            if (photos[0].asset) {
+                
+                NSArray *resourceList = [PHAssetResource assetResourcesForAsset:photos[0].asset];
+                [resourceList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                               
+                    PHAssetResource *resource = obj;
+                    PHAssetResourceRequestOptions *option = [[PHAssetResourceRequestOptions alloc]init];
+                    option.networkAccessAllowed = YES;
+                    // 首先,需要获取沙盒路径
+                    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+                    // 拼接图片名为resource.originalFilename的路径
+                    NSString *imageFilePath = [path stringByAppendingPathComponent:resource.originalFilename];
+
+                    if ([resource.uniformTypeIdentifier isEqualToString:@"com.compuserve.gif"]) {
+                                   
+                        [[PHAssetResourceManager defaultManager] writeDataForAssetResource:resource toFile:[NSURL fileURLWithPath:imageFilePath] options:option completionHandler:^(NSError * _Nullable error) {
+                            if (error) {
+                                if(error.code == -1){
+                                    //文件已存在
+                                    self.imageData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:imageFilePath]];
+                                }
+                            } else {
+                                self.imageData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:imageFilePath]];
+                            }
+                        }];
+                    }
+                }];
+            }
+            
+        } else {
+            UIImage *image = photos[0].thumbPhoto;
+            self.imageData = UIImagePNGRepresentation(image);
+        }
+    }
 }
 
 #pragma mark -- Other Delegate

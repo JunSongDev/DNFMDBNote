@@ -62,8 +62,10 @@
 // 自适应字体大小
 #define fontSize(size)      size*(SCREEN_W/375.0)
 #define systemFont(size)    [UIFont systemFontOfSize:fontSize(size)]
+#define AUTO_SYS_FONT(size) [UIFont systemFontOfSize:fontSize(size)]
 // 边距
-#define spaceSize(space)     space*(SCREEN_W/375.0)
+#define spaceSize(space)    space*(SCREEN_W/375.0)
+#define AUTO_MARGIN(space)  space*(SCREEN_W/375.0)
 
 // tableView 的行高
 #define tableHeight         SCREEN_WIDTH <= 320 ? 44 : 50

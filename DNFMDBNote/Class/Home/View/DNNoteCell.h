@@ -11,11 +11,6 @@
 
 @interface DNNoteCell : DNBaseCell
 
-@property (nonatomic, strong) UIImageView *thumImage;
-@property (nonatomic, strong) UILabel *content;
-@property (nonatomic, strong) UILabel *dayDate;
-@property (nonatomic, strong) UILabel *timeDate;
-
 @property (nonatomic, strong) DNNoteModel * model;
 
 @end

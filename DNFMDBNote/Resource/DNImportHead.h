@@ -14,6 +14,7 @@
 #import "DNFMDBTool.h"
 #import <FMDB/FMDB.h>
 #import <Toast/Toast.h>
+#import <SDWebImage/SDWebImage.h>
 #import <Masonry/Masonry.h>
 #import <JPush/JPUSHService.h>
 #import <MJRefresh/MJRefresh.h>

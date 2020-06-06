@@ -11,7 +11,6 @@
 #import "DNNoteModel.h"
 #import "DNDetailController.h"
 #import "DNEditorController.h"
-#import "DNPersonController.h"
 #import "NSArray+Extension.h"
 
 @interface HomeController ()
@@ -83,7 +82,8 @@
         [weakself editorNoteRecord];
     }];
     
-    self.tableView.backgroundColor = UIColor.clearColor;
+    self.tableView.estimatedRowHeight = 100;
+    self.tableView.rowHeight          = UITableViewAutomaticDimension;
     self.tableView.allowsMultipleSelectionDuringEditing = YES; // 允许多选
     [self.tableView registerClass:[DNNoteCell class] forCellReuseIdentifier:@"DNNoteCell"];
     
@@ -94,10 +94,9 @@
 #pragma mark -- AddConstrainsForSuper
 - (void)addConstrainsForSuper {
     
-    UIEdgeInsets edgs = UIEdgeInsetsMake(10, 10, 10, 10);
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.edges.mas_equalTo(self.view).insets(edgs);
+        make.edges.mas_equalTo(self.view);
     }];
     
     [self.insertButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -193,19 +192,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    DNNoteModel * model = self.dataArr[indexPath.section];
-    DNNoteCell * cell = [tableView dequeueReusableCellWithIdentifier:@"DNNoteCell"];
+    DNNoteModel *model = self.dataArr[indexPath.section];
+    DNNoteCell  *cell  = [tableView dequeueReusableCellWithIdentifier:@"DNNoteCell"];
     if (!cell) {
-        
         cell = [[DNNoteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DNNoteCell"];
     }
     cell.model = model;
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return SCREEN_W * 0.14;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
