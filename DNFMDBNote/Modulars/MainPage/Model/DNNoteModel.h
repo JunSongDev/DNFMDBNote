@@ -16,4 +16,5 @@
 @property (nonatomic,   copy) NSString * content;
 @property (nonatomic,   copy) NSString * dateStr;
 @property (nonatomic, strong) NSData   * imageData;
+@property (nonatomic, strong) NSData   * audioData;
 @end

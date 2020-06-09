@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UILabel     *titleLabel;
 @property (nonatomic, strong) UILabel     *content;
 @property (nonatomic, strong) UILabel     *dateLabel;
+
+@property (nonatomic, strong) UIButton    *playBtn;
 @end
 
 @implementation DNMainPageNoteCell
@@ -74,6 +76,15 @@
     self.dateLabel  = [[UILabel alloc]init];
     self.dateLabel.font = systemFont(10);
     self.dateLabel.textColor = RGB(153, 153, 153, 1);
+    
+    self.playBtn = [[UIButton alloc] init];
+    self.playBtn.titleLabel.font     = AUTO_SYS_FONT(14);
+    self.playBtn.backgroundColor     = barColor;
+    self.playBtn.layer.cornerRadius  = AUTO_MARGIN(10);
+    self.playBtn.layer.masksToBounds = YES;
+    [self.playBtn setTitle:@"播放" forState:UIControlStateNormal];
+    [self.playBtn addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)setupConstraints {
@@ -99,7 +110,17 @@
        
         make.top.mas_equalTo(self.bgView.mas_top).inset(AUTO_MARGIN(20));
         make.leading.mas_equalTo(self.logoImage.mas_trailing).mas_offset(AUTO_MARGIN(10));
+        
+    }];
+    
+    [self.bgView addSubview:self.playBtn];
+    [self.playBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.centerY.mas_equalTo(self.titleLabel.mas_centerY);
         make.trailing.mas_equalTo(self.bgView.mas_trailing).inset(AUTO_MARGIN(12));
+        make.leading.mas_equalTo(self.titleLabel.mas_trailing).mas_offset(AUTO_MARGIN(10));
+        make.width.mas_offset(AUTO_MARGIN(60));
+        make.height.mas_offset(AUTO_MARGIN(20));
     }];
     
     [self.bgView addSubview:self.content];
@@ -118,6 +139,11 @@
     }];
 }
 
+- (void)playAction {
+    
+    [[DNAudioManager defaultManeger] dn_playRecordAudio:self.model.audioData];
+}
+
 - (void)setModel:(DNNoteModel *)model {
     
     _model = model;
@@ -126,6 +152,7 @@
     self.titleLabel.text = model.titleStr;
     self.content.text    = model.content;
     self.dateLabel.text  = model.dateStr;
+    self.playBtn.hidden  = model.audioData == nil;
 }
 
 @end

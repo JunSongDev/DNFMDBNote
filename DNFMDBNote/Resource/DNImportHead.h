@@ -10,8 +10,9 @@
 #define DNImportHead_h
 
 #import "DNAlert.h"
-//#import "DNDBTools.h"
 #import "DNFMDBTool.h"
+#import "DNAudioManager.h"
+
 #import <FMDB/FMDB.h>
 #import <Toast/Toast.h>
 #import <SDWebImage/SDWebImage.h>

@@ -44,6 +44,9 @@
 		7095B74220F875F4008A1C3D /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B73820F875F4008A1C3D /* UIButton+Extension.m */; };
 		7095B74E20F87D84008A1C3D /* DNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7095B74D20F87D84008A1C3D /* DNNoteModel.m */; };
 		7095B75920F89795008A1C3D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7095B75820F89795008A1C3D /* libsqlite3.tbd */; };
+		70BAC209248E2CC00045C15D /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BAC208248E2CC00045C15D /* libmp3lame.a */; };
+		70BAC20F248E2DBE0045C15D /* DNAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BAC20E248E2DBE0045C15D /* DNAudioManager.m */; };
+		70BAC212248E46BB0045C15D /* DNCalendarNoticeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BAC211248E46BB0045C15D /* DNCalendarNoticeManager.m */; };
 		70FF3AA7216F20B5002B0F51 /* DNNoteCellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AA6216F20B5002B0F51 /* DNNoteCellSwift.swift */; };
 		70FF3AA9216F20DD002B0F51 /* DNEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AA8216F20DD002B0F51 /* DNEditorViewController.swift */; };
 		70FF3AAB216F20E7002B0F51 /* DNDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF3AAA216F20E7002B0F51 /* DNDetailViewController.swift */; };
@@ -158,6 +161,12 @@
 		7095B74C20F87D84008A1C3D /* DNNoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNNoteModel.h; sourceTree = "<group>"; };
 		7095B74D20F87D84008A1C3D /* DNNoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNNoteModel.m; sourceTree = "<group>"; };
 		7095B75820F89795008A1C3D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		70BAC206248E2CC00045C15D /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		70BAC208248E2CC00045C15D /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		70BAC20D248E2DBE0045C15D /* DNAudioManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNAudioManager.h; sourceTree = "<group>"; };
+		70BAC20E248E2DBE0045C15D /* DNAudioManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNAudioManager.m; sourceTree = "<group>"; };
+		70BAC210248E46BB0045C15D /* DNCalendarNoticeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNCalendarNoticeManager.h; sourceTree = "<group>"; };
+		70BAC211248E46BB0045C15D /* DNCalendarNoticeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNCalendarNoticeManager.m; sourceTree = "<group>"; };
 		70F146C320F842FB00C18212 /* DNFMDBNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNFMDBNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F146DB20F842FD00C18212 /* DNFMDBNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNFMDBNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F146E620F842FD00C18212 /* DNFMDBNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNFMDBNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BAC209248E2CC00045C15D /* libmp3lame.a in Frameworks */,
 				7095B75920F89795008A1C3D /* libsqlite3.tbd in Frameworks */,
 				20CDB6F280974489B1C46AFC /* Pods_DNFMDBNote.framework in Frameworks */,
 			);
@@ -337,6 +347,10 @@
 			children = (
 				7078158220FC701600B3A30A /* DNAlert.h */,
 				7078158120FC701600B3A30A /* DNAlert.m */,
+				70BAC20D248E2DBE0045C15D /* DNAudioManager.h */,
+				70BAC20E248E2DBE0045C15D /* DNAudioManager.m */,
+				70BAC210248E46BB0045C15D /* DNCalendarNoticeManager.h */,
+				70BAC211248E46BB0045C15D /* DNCalendarNoticeManager.m */,
 				7095B72620F875F4008A1C3D /* Fundation (Category) */,
 				7095B72B20F875F4008A1C3D /* UIKit (Category) */,
 			);
@@ -401,6 +415,47 @@
 			path = "UIKit (Category)";
 			sourceTree = "<group>";
 		};
+		70BAC202248E2CBF0045C15D /* ThirdLibs */ = {
+			isa = PBXGroup;
+			children = (
+				70BAC203248E2CBF0045C15D /* lame */,
+			);
+			path = ThirdLibs;
+			sourceTree = "<group>";
+		};
+		70BAC203248E2CBF0045C15D /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				70BAC204248E2CBF0045C15D /* include */,
+				70BAC207248E2CC00045C15D /* lib */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
+		70BAC204248E2CBF0045C15D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				70BAC205248E2CBF0045C15D /* lame */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		70BAC205248E2CBF0045C15D /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				70BAC206248E2CC00045C15D /* lame.h */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
+		70BAC207248E2CC00045C15D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				70BAC208248E2CC00045C15D /* libmp3lame.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		70F146BA20F842FB00C18212 = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				701660F4218FE2E600B7211C /* DNFMDBNote.entitlements */,
+				70BAC202248E2CBF0045C15D /* ThirdLibs */,
 				705DEF4F248B7FFE009A8654 /* Modulars */,
 				7095B6E720F8737F008A1C3D /* Root */,
 				7095B6FD20F8737F008A1C3D /* Base */,
@@ -786,6 +842,7 @@
 			files = (
 				7095B73C20F875F4008A1C3D /* UIView+DNFrame.m in Sources */,
 				7095B73E20F875F4008A1C3D /* UIScrollView+DNRefresh.m in Sources */,
+				70BAC20F248E2DBE0045C15D /* DNAudioManager.m in Sources */,
 				70454B742226217800604375 /* DNFMDBTool.m in Sources */,
 				7095B70220F8737F008A1C3D /* main.m in Sources */,
 				7095B74020F875F4008A1C3D /* UIColor+Extension.m in Sources */,
@@ -804,6 +861,7 @@
 				701660FA218FF3F400B7211C /* AppDelegate+JPush.m in Sources */,
 				705DEF56248B803C009A8654 /* DNMainPageViewController.m in Sources */,
 				7095B73D20F875F4008A1C3D /* UIImage+Extension.m in Sources */,
+				70BAC212248E46BB0045C15D /* DNCalendarNoticeManager.m in Sources */,
 				7095B73A20F875F4008A1C3D /* NSArray+Extension.m in Sources */,
 				705DEF5C248BA6D4009A8654 /* DNEditorInfoViewController.m in Sources */,
 				7095B70420F8737F008A1C3D /* AppDelegate.m in Sources */,
@@ -1154,6 +1212,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DNFMDBNote/ThirdLibs/lame/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1174,6 +1236,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DNFMDBNote/ThirdLibs/lame/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Remember.DNFMDBNote-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

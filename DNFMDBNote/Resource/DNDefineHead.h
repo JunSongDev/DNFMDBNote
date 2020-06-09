@@ -57,9 +57,19 @@
 #define barColor            RGB(28, 28, 28, 1.0)
 // barTitle
 #define barTitle            RGB(237, 193, 115, 1.0)
+
+/// 判断是否为竖屏
+#define IsPortrait          ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortrait || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortraitUpsideDown)
+
 // 屏幕宽高
+#ifdef IsPortrait
 #define SCREEN_W            [UIScreen mainScreen].bounds.size.width
 #define SCREEN_H            [UIScreen mainScreen].bounds.size.height
+#else
+#define SCREEN_W            [UIScreen mainScreen].bounds.size.height
+#define SCREEN_H            [UIScreen mainScreen].bounds.size.width
+#endif
+
 // 自适应字体大小
 #define fontSize(size)      size*(SCREEN_W/375.0)
 #define systemFont(size)    [UIFont systemFontOfSize:fontSize(size)]

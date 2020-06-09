@@ -19,11 +19,13 @@
 @property (nonatomic, strong) UIView      *contentView;
 @property (nonatomic, strong) UITextField *titleText;
 @property (nonatomic, strong) UITextView  *contentText;
+@property (nonatomic, strong) UIButton    *audioBtn;
 
 @property (nonatomic, strong) HXPhotoManager *manager;
 @property (nonatomic, strong) HXPhotoView    *photoView;
 
 @property (nonatomic, strong) NSData         *imageData;
+@property (nonatomic, strong) NSData         *audioData;
 @end
 
 @implementation DNEditorInfoViewController
@@ -84,6 +86,18 @@
     self.photoView = [[HXPhotoView alloc] initWithManager:self.manager];
     self.photoView.delegate  = self;
     self.photoView.lineCount = 4;
+    
+    self.audioBtn = [[UIButton alloc] init];
+    self.audioBtn.titleLabel.font     = AUTO_SYS_FONT(14);
+    self.audioBtn.layer.borderColor   = UIColorMake(248, 248, 248).CGColor;
+    self.audioBtn.layer.borderWidth   = AUTO_MARGIN(1);
+    self.audioBtn.layer.cornerRadius  = AUTO_MARGIN(22);
+    self.audioBtn.layer.masksToBounds = YES;
+    [self.audioBtn setTitle:@"录音" forState:UIControlStateNormal];
+    [self.audioBtn setTitleColor:UIColorMake(51, 51, 51) forState:UIControlStateNormal];
+    [self.audioBtn addTarget:self action:@selector(audioRecordAction) forControlEvents:UIControlEventTouchUpInside];
+    
+//    [self.audioBtn addTarget:self action:@selector(recordAudioAction) forControlEvents:UIControlEventTouchDragEnter];
 }
 
 - (void)setupConstraints {
@@ -122,6 +136,15 @@
         make.top.mas_equalTo(self.contentText.mas_bottom).mas_offset(AUTO_MARGIN(12));
         make.leading.trailing.mas_equalTo(self.titleText);
         make.height.mas_offset(AUTO_MARGIN(100));
+        
+    }];
+    
+    [self.contentView addSubview:self.audioBtn];
+    [self.audioBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.mas_equalTo(self.photoView.mas_bottom).mas_offset(AUTO_MARGIN(20));
+        make.leading.trailing.mas_equalTo(self.titleText);
+        make.height.mas_offset(AUTO_MARGIN(44));
         make.bottom.mas_equalTo(self.contentView.mas_bottom).inset(AUTO_MARGIN(12));
     }];
 }
@@ -137,6 +160,22 @@
                                                                    target:self
                                                                    action:@selector(editorInfoAction)];
     self.navigationItem.rightBarButtonItems = @[insertItem];
+}
+
+- (void)audioRecordAction {
+    
+    self.audioBtn.selected = !self.audioBtn.selected;
+    if (self.audioBtn.selected) {
+        
+        [[DNAudioManager defaultManeger] dn_startRecordAudio:^(NSString * _Nonnull timeLong,
+                                                               NSData * _Nonnull audioData) {
+            
+            self.audioData = audioData;
+            NSLog(@"%@", timeLong);
+        }];
+    } else {
+        [[DNAudioManager defaultManeger] dn_stopRecordAudio];
+    }
 }
 
 - (void)editorInfoAction {
@@ -164,6 +203,7 @@
         model.titleStr  = self.titleText.text;
         model.content   = self.contentText.text;
         model.imageData = self.imageData;
+        model.audioData = self.audioData;
         model.dateStr   = [self dn_getCurrentDate];
         if (self.model == nil) {
             [[DNFMDBTool defaultManager] dn_insertData:model];

@@ -17,7 +17,7 @@
     [aCoder encodeObject:self.titleStr  forKey:@"titleStr"];
     [aCoder encodeObject:self.dateStr   forKey:@"dateStr"];
     [aCoder encodeObject:self.imageData forKey:@"imageData"];
-//    [aCoder encodeDataObject:self.imageData];
+    [aCoder encodeObject:self.audioData forKey:@"audioData"];
 }
 
 - (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
@@ -30,7 +30,7 @@
         self.titleStr  = [aDecoder decodeObjectForKey:@"titleStr"];
         self.dateStr   = [aDecoder decodeObjectForKey:@"dateStr"];
         self.imageData = [aDecoder decodeObjectForKey:@"imageData"];
-//        self.imageData = [aDecoder decodeDataObject];
+        self.audioData = [aDecoder decodeObjectForKey:@"audioData"];
     }
     return self;
 }
